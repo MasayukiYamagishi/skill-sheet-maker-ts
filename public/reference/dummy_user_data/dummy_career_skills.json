@@ -1,0 +1,32 @@
+[
+  {
+    "career_id": "37007123-8499-40de-bad9-167af720203d",
+    "skill_id": "skill_python",
+    "version": "3.6"
+  },
+  {
+    "career_id": "37007123-8499-40de-bad9-167af720203d",
+    "skill_id": "skill_pytorch",
+    "version": "1.4"
+  },
+  {
+    "career_id": "37007123-8499-40de-bad9-167af720203d",
+    "skill_id": "skill_linux",
+    "version": ""
+  },
+  {
+    "career_id": "9cd2aefe-e73a-4229-8514-47412407352b",
+    "skill_id": "skill_python",
+    "version": "3.8"
+  },
+  {
+    "career_id": "9cd2aefe-e73a-4229-8514-47412407352b",
+    "skill_id": "skill_bert",
+    "version": ""
+  },
+  {
+    "career_id": "9cd2aefe-e73a-4229-8514-47412407352b",
+    "skill_id": "skill_postgresql",
+    "version": "12"
+  }
+]

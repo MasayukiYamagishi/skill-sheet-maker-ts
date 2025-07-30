@@ -1,0 +1,154 @@
+[
+  {
+    "id": "skill_jest",
+    "label": "Jest",
+    "description": "JavaScriptのためのユニットテストフレームワーク。",
+    "deviconId": "jest",
+    "categoryId": "testing",
+    "tags": ["testing", "javascript", "framework"]
+  },
+  {
+    "id": "skill_pytest",
+    "label": "pytest",
+    "description": "Pythonの代表的なユニットテストフレームワーク。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "python", "framework"]
+  },
+  {
+    "id": "skill_unittest",
+    "label": "unittest",
+    "description": "Python標準の単体テストフレームワーク。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "python", "standard"]
+  },
+  {
+    "id": "skill_mocha",
+    "label": "Mocha",
+    "description": "Node.js向け柔軟なテストフレームワーク。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "javascript", "nodejs"]
+  },
+  {
+    "id": "skill_chai",
+    "label": "Chai",
+    "description": "JavaScript/Node.js用アサーションライブラリ。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "javascript", "assertion"]
+  },
+  {
+    "id": "skill_enzyme",
+    "label": "Enzyme",
+    "description": "Reactコンポーネント用テストユーティリティ。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "react", "javascript"]
+  },
+  {
+    "id": "skill_rspec",
+    "label": "RSpec",
+    "description": "RubyのためのBDDスタイルテストフレームワーク。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "ruby", "bdd"]
+  },
+  {
+    "id": "skill_junit",
+    "label": "JUnit",
+    "description": "Javaで最も使われるユニットテストフレームワーク。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "java", "unit"]
+  },
+  {
+    "id": "skill_nunit",
+    "label": "NUnit",
+    "description": ".NET向けの定番テストフレームワーク。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "dotnet", "unit"]
+  },
+  {
+    "id": "skill_selenium",
+    "label": "Selenium",
+    "description": "Webアプリの自動UIテストツール。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "web", "ui", "automation"]
+  },
+  {
+    "id": "skill_cypress",
+    "label": "Cypress",
+    "description": "JavaScript向けの次世代Webエンドツーエンドテストフレームワーク。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "web", "javascript", "e2e"]
+  },
+  {
+    "id": "skill_playwright",
+    "label": "Playwright",
+    "description": "Microsoft開発のモダンなE2Eテスト自動化フレームワーク。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "web", "javascript", "e2e"]
+  },
+  {
+    "id": "skill_karma",
+    "label": "Karma",
+    "description": "JavaScriptフレームワーク用のテストランナー。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "javascript", "runner"]
+  },
+  {
+    "id": "skill_testng",
+    "label": "TestNG",
+    "description": "Java向けの強力なテストフレームワーク（JUnit拡張版）。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "java", "framework"]
+  },
+  {
+    "id": "skill_qunit",
+    "label": "QUnit",
+    "description": "JavaScriptアプリケーションのための単体テストフレームワーク。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "javascript", "unit"]
+  },
+  {
+    "id": "skill_postman",
+    "label": "Postman",
+    "description": "APIのテスト・自動化・ドキュメント化に最適なツール。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "api", "automation"]
+  },
+  {
+    "id": "skill_coverage",
+    "label": "coverage.py",
+    "description": "Python用コードカバレッジ測定ツール。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "python", "coverage"]
+  },
+  {
+    "id": "skill_jacoco",
+    "label": "JaCoCo",
+    "description": "Java向けのコードカバレッジ計測ツール。",
+    "deviconId": "",
+    "categoryId": "testing",
+    "tags": ["testing", "java", "coverage"]
+  },
+  {
+    "id": "skill_jasmine",
+    "label": "Jasmine",
+    "description": "JavaScriptのためのテストフレームワーク。",
+    "deviconId": "jasmine",
+    "categoryId": "framework",
+    "tags": ["javascript", "framework", "test"]
+  }
+]

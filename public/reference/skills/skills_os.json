@@ -1,0 +1,106 @@
+[
+  {
+    "id": "skill_android",
+    "label": "Android",
+    "description": "Googleが開発したスマートフォン・タブレット向けのOS。",
+    "deviconId": "android",
+    "categoryId": "os",
+    "tags": ["os", "mobile"]
+  },
+  {
+    "id": "skill_ios",
+    "label": "iOS",
+    "description": "Apple社が開発したiPhoneやiPadなどのモバイルデバイス向けのOS。",
+    "deviconId": "android",
+    "categoryId": "os",
+    "tags": ["os", "mobile"]
+  },
+  {
+    "id": "skill_archlinux",
+    "label": "Arch Linux",
+    "description": "シンプルさとカスタマイズ性が高いLinuxディストリビューション。",
+    "deviconId": "archlinux",
+    "categoryId": "os",
+    "tags": ["linux", "distribuition", "desktop"]
+  },
+  {
+    "id": "skill_centos",
+    "label": "CentOS",
+    "description": "エンタープライズ向けのRed Hat系Linuxディストリビューション。",
+    "deviconId": "centos",
+    "categoryId": "os",
+    "tags": ["server", "linux"]
+  },
+  {
+    "id": "skill_debian",
+    "label": "Debian",
+    "description": "安定性が特徴のフリーなLinuxディストリビューション。",
+    "deviconId": "debian",
+    "categoryId": "os",
+    "tags": ["os", "server"]
+  },
+  {
+    "id": "skill_fedora",
+    "label": "Fedora",
+    "description": "最新技術を取り入れたLinuxディストリビューション。",
+    "deviconId": "fedora",
+    "categoryId": "os",
+    "tags": ["linux", "distribuition", "desktop"]
+  },
+  {
+    "id": "skill_gentoo",
+    "label": "Gentoo",
+    "description": "高いカスタマイズ性を持つLinuxディストリビューション。",
+    "deviconId": "gentoo",
+    "categoryId": "os",
+    "tags": ["linux", "distribuition", "desktop"]
+  },
+  {
+    "id": "skill_linux",
+    "label": "Linux",
+    "description": "オープンソースのUNIX系オペレーティングシステム。",
+    "deviconId": "linux",
+    "categoryId": "os",
+    "tags": ["os"]
+  },
+  {
+    "id": "skill_macos",
+    "label": "macOS",
+    "description": "Apple社製Mac向けのUNIX系オペレーティングシステム。",
+    "deviconId": "macos",
+    "categoryId": "os",
+    "tags": ["os"]
+  },
+  {
+    "id": "skill_ubuntu",
+    "label": "Ubuntu",
+    "description": "使いやすさとサポートに優れたLinuxディストリビューション。",
+    "deviconId": "ubuntu",
+    "categoryId": "os",
+    "tags": ["os", "linux", "server"]
+  },
+  {
+    "id": "skill_windows8",
+    "label": "Windows 8",
+    "description": "Microsoftが開発したPC向けオペレーティングシステム。",
+    "deviconId": "windows8",
+    "categoryId": "os",
+    "tags": ["os"]
+  },
+  {
+    "id": "skill_windows10",
+    "label": "Windows 10",
+    "description": "Microsoftが開発したPC向けオペレーティングシステム。",
+    "deviconId": "",
+    "categoryId": "os",
+    "tags": ["os"]
+  },
+  {
+    "id": "skill_windows11",
+    "label": "Windows 11",
+    "description": "Microsoft製の最新デスクトップ向けオペレーティングシステム。",
+    "deviconId": "windows11",
+    "categoryId": "os",
+    "tags": ["os"]
+  }
+]

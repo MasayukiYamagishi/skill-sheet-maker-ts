@@ -1,0 +1,122 @@
+[
+  {
+    "id": "skill_circleci",
+    "label": "CircleCI",
+    "description": "クラウド型の継続的インテグレーションサービス。",
+    "deviconId": "circleci",
+    "categoryId": "cicd",
+    "tags": ["cicd", "cloud"]
+  },
+  {
+    "id": "skill_githubactions",
+    "label": "GitHub Actions",
+    "description": "GitHubが提供するCI/CDワークフロー自動化サービス。",
+    "deviconId": "githubactions",
+    "categoryId": "cicd",
+    "tags": ["cicd", "github", "automation"]
+  },
+  {
+    "id": "skill_githubactionsrunner",
+    "label": "GitHub Actions Runner",
+    "description": "GitHub Actionsのワークフローを実行するエージェント。",
+    "deviconId": "",
+    "categoryId": "cicd",
+    "tags": ["cicd", "github", "automation"]
+  },
+  {
+    "id": "skill_gitlabci",
+    "label": "GitLab CI",
+    "description": "GitLabが提供する統合CI/CDシステム。",
+    "deviconId": "gitlab",
+    "categoryId": "cicd",
+    "tags": ["cicd", "gitlab", "automation"]
+  },
+  {
+    "id": "skill_travisci",
+    "label": "Travis CI",
+    "description": "OSSで広く使われるクラウド型CIサービス。",
+    "deviconId": "travis",
+    "categoryId": "cicd",
+    "tags": ["cicd", "cloud"]
+  },
+  {
+    "id": "skill_jenkins",
+    "label": "Jenkins",
+    "description": "オープンソースの老舗CI/CD自動化サーバー。",
+    "deviconId": "jenkins",
+    "categoryId": "cicd",
+    "tags": ["cicd", "opensource", "automation"]
+  },
+  {
+    "id": "skill_azurepipelines",
+    "label": "Azure Pipelines",
+    "description": "Azure DevOpsのCI/CDサービス。多様な言語とプラットフォームに対応。",
+    "deviconId": "",
+    "categoryId": "cicd",
+    "tags": ["cicd", "azure", "cloud"]
+  },
+  {
+    "id": "skill_bitbucketpipelines",
+    "label": "Bitbucket Pipelines",
+    "description": "Bitbucketの統合CI/CDサービス。",
+    "deviconId": "bitbucket",
+    "categoryId": "cicd",
+    "tags": ["cicd", "bitbucket", "cloud"]
+  },
+  {
+    "id": "skill_teamcity",
+    "label": "TeamCity",
+    "description": "JetBrainsが開発したエンタープライズ向けCI/CDサーバー。",
+    "deviconId": "",
+    "categoryId": "cicd",
+    "tags": ["cicd", "jetbrains", "automation"]
+  },
+  {
+    "id": "skill_bamboo",
+    "label": "Bamboo",
+    "description": "Atlassian社のCI/CD自動化サービス。",
+    "deviconId": "",
+    "categoryId": "cicd",
+    "tags": ["cicd", "atlassian", "automation"]
+  },
+  {
+    "id": "skill_harbor",
+    "label": "Harbor",
+    "description": "CNCF認定のコンテナイメージ管理＆セキュリティ自動化ツール。",
+    "deviconId": "harbor",
+    "categoryId": "cicd",
+    "tags": ["cicd", "container", "security"]
+  },
+  {
+    "id": "skill_argo",
+    "label": "Argo CD",
+    "description": "KubernetesのためのGitOpsベースのCDツール。",
+    "deviconId": "",
+    "categoryId": "cicd",
+    "tags": ["cicd", "kubernetes", "gitops"]
+  },
+  {
+    "id": "skill_spinnaker",
+    "label": "Spinnaker",
+    "description": "マルチクラウド対応の継続的デリバリープラットフォーム。",
+    "deviconId": "",
+    "categoryId": "cicd",
+    "tags": ["cicd", "cloud", "delivery"]
+  },
+  {
+    "id": "skill_fluxcd",
+    "label": "Flux CD",
+    "description": "Kubernetes向けのGitOpsツール。",
+    "deviconId": "",
+    "categoryId": "cicd",
+    "tags": ["cicd", "kubernetes", "gitops"]
+  },
+  {
+    "id": "skill_screwdriver",
+    "label": "Screwdriver",
+    "description": "Yahooが開発したクラウドネイティブ対応のオープンソースCI/CDツール。",
+    "deviconId": "",
+    "categoryId": "cicd",
+    "tags": ["cicd", "opensource", "cloud"]
+  }
+]

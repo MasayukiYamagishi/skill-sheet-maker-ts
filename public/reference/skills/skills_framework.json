@@ -1,0 +1,162 @@
+[
+  {
+    "id": "skill_angularjs",
+    "label": "AngularJS",
+    "description": "Google開発のMVCフレームワーク（JSベース）。",
+    "deviconId": "angularjs",
+    "categoryId": "framework",
+    "tags": ["javascript", "framework", "web"]
+  },
+  {
+    "id": "skill_ember",
+    "label": "Ember.js",
+    "description": "野心的なWebアプリ向けJavaScriptフレームワーク。",
+    "deviconId": "ember",
+    "categoryId": "framework",
+    "tags": ["framework", "web", "javascript"]
+  },
+  {
+    "id": "skill_express",
+    "label": "Express",
+    "description": "Node.js向け高速軽量Webアプリケーションフレームワーク。",
+    "deviconId": "express",
+    "categoryId": "framework",
+    "tags": ["nodejs", "framework", "web"]
+  },
+  {
+    "id": "skill_fastapi",
+    "label": "FastAPI",
+    "description": "Python製の高速Web APIフレームワーク。",
+    "deviconId": "fastapi",
+    "categoryId": "framework",
+    "tags": ["python", "framework", "api"]
+  },
+  {
+    "id": "skill_flutter",
+    "label": "Flutter",
+    "description": "Google開発のクロスプラットフォームUIフレームワーク。",
+    "deviconId": "flutter",
+    "categoryId": "framework",
+    "tags": ["framework", "mobile", "dart"]
+  },
+  {
+    "id": "skill_gatsby",
+    "label": "Gatsby",
+    "description": "Reactベースの静的サイトジェネレータ。",
+    "deviconId": "gatsby",
+    "categoryId": "framework",
+    "tags": ["react", "framework", "static"]
+  },
+  {
+    "id": "skill_jekyll",
+    "label": "Jekyll",
+    "description": "静的サイトを簡単に作成するフレームワーク。",
+    "deviconId": "jekyll",
+    "categoryId": "framework",
+    "tags": ["static", "framework", "blog"]
+  },
+  {
+    "id": "skill_laravel",
+    "label": "Laravel",
+    "description": "PHP用の人気MVCフレームワーク。",
+    "deviconId": "laravel",
+    "categoryId": "framework",
+    "tags": ["php", "framework"]
+  },
+  {
+    "id": "skill_nextjs",
+    "label": "Next.js",
+    "description": "ReactアプリのSSR/SSGを実現するフレームワーク。",
+    "deviconId": "nextjs",
+    "categoryId": "framework",
+    "tags": ["react", "framework", "web"]
+  },
+  {
+    "id": "skill_nuxtjs",
+    "label": "Nuxt.js",
+    "description": "Vue.jsアプリケーション向けフルスタックフレームワーク。",
+    "deviconId": "nuxtjs",
+    "categoryId": "framework",
+    "tags": ["vue", "framework", "ssr"]
+  },
+  {
+    "id": "skill_rails",
+    "label": "Ruby on Rails",
+    "description": "Rubyで書かれたWebアプリ用フルスタックフレームワーク。",
+    "deviconId": "rails",
+    "categoryId": "framework",
+    "tags": ["ruby", "framework", "web"]
+  },
+  {
+    "id": "skill_react",
+    "label": "React",
+    "description": "UI構築に特化したFacebook開発のJavaScriptライブラリ。",
+    "deviconId": "react",
+    "categoryId": "framework",
+    "tags": ["javascript", "framework", "ui"]
+  },
+  {
+    "id": "skill_spring",
+    "label": "Spring",
+    "description": "Java向けのエンタープライズアプリケーションフレームワーク。",
+    "deviconId": "spring",
+    "categoryId": "framework",
+    "tags": ["java", "framework"]
+  },
+  {
+    "id": "skill_svelte",
+    "label": "Svelte",
+    "description": "コンパイル型の新しいUIフレームワーク。",
+    "deviconId": "svelte",
+    "categoryId": "framework",
+    "tags": ["framework", "javascript", "ui"]
+  },
+  {
+    "id": "skill_vite",
+    "label": "Vite",
+    "description": "高速なフロントエンド開発用ビルドツール＆フレームワーク。",
+    "deviconId": "vite",
+    "categoryId": "framework",
+    "tags": ["framework", "tool", "javascript"]
+  },
+  {
+    "id": "skill_vuejs",
+    "label": "Vue.js",
+    "description": "軽量で柔軟なJavaScriptフレームワーク。",
+    "deviconId": "vuejs",
+    "categoryId": "framework",
+    "tags": ["javascript", "framework", "ui"]
+  },
+  {
+    "id": "skill_storybook",
+    "label": "Storybook",
+    "description": "UIコンポーネント開発のためのドキュメント＆テストフレームワーク。",
+    "deviconId": "storybook",
+    "categoryId": "framework",
+    "tags": ["framework", "ui", "documentation"]
+  },
+  {
+    "id": "skill_redux",
+    "label": "Redux",
+    "description": "JavaScriptアプリの状態管理フレームワーク。",
+    "deviconId": "redux",
+    "categoryId": "framework",
+    "tags": ["framework", "javascript", "statemanagement"]
+  },
+  {
+    "id": "skill_bootstrap",
+    "label": "Bootstrap",
+    "description": "モバイルファーストなCSSフレームワーク。",
+    "deviconId": "bootstrap",
+    "categoryId": "framework",
+    "tags": ["framework", "css", "ui"]
+  },
+  {
+    "id": "skill_materialui",
+    "label": "Material UI",
+    "description": "React向けGoogle Material Design準拠のUIライブラリ。",
+    "deviconId": "materialui",
+    "categoryId": "framework",
+    "tags": ["framework", "react", "ui"]
+  }
+]

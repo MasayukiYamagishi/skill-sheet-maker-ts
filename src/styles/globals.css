@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: all;
+}
+@tailwind utilities;
+
+/* Inter 可変フォント */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900; /* 可変フォントのweight範囲 */
+  src: url('./public/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* フォールバック：Inter固定ウェイト */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./public/fonts/Inter_18pt-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./pulic/fonts/Inter_18pt-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Noto Sans JP 可変フォント */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('./public/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* フォールバック：Noto Sans JP 固定ウェイト */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./public/fonts/NotoSansJP-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./public/fonts/NotoSansJP-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  /* 基本カラー. */
+  --color-bg: #ffffff;
+  --color-text: #070707;
+
+  --gray: #f4f4f4;
+  --black: #070707;
+  --red: #df091a;
+  --white: #ffffff;
+}
+
+/* html要素やbody要素に指定するルールのリセットやデフォルトスタイル */
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+  }
+
+  /* ダークモード用. */
+  .dark {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+
+  html {
+    font-family: 'Inter', 'Noto Sans JP', ui-sans-serif, system-ui;
+  }
+  body {
+    @apply bg-base-100 text-base-content;
+  }
+}
+
+/* レイアウト用のコンテナや、ボタンやカードといったコンポーネント単位のスタイル */
+@layer components {
+  /* nothing */
+}
+
+/* サイズやカラーなどの細かなスタイルの指定 */
+@layer utilities {
+  .text-heading-h1 {
+    @apply text-4xl font-bold;
+  }
+  .text-heading-h2 {
+    @apply text-3xl font-bold;
+  }
+  .text-heading-h3 {
+    @apply text-2xl font-bold;
+  }
+}

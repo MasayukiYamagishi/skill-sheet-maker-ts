@@ -1,0 +1,66 @@
+[
+  {
+    "id": "skill_burpsuite",
+    "label": "Burp Suite",
+    "description": "Webアプリケーションセキュリティテスト用統合プラットフォーム。",
+    "deviconId": "burpsuite",
+    "categoryId": "security",
+    "tags": ["security", "testing"]
+  },
+  {
+    "id": "skill_owaspzap",
+    "label": "OWASP ZAP",
+    "description": "Webアプリケーションの脆弱性診断自動化ツール。",
+    "deviconId": "",
+    "categoryId": "security",
+    "tags": ["security", "testing", "owasp"]
+  },
+  {
+    "id": "skill_nmap",
+    "label": "Nmap",
+    "description": "ネットワークセキュリティ監査やポートスキャンに用いるOSSツール。",
+    "deviconId": "",
+    "categoryId": "security",
+    "tags": ["security", "network", "scanner"]
+  },
+  {
+    "id": "skill_fail2ban",
+    "label": "Fail2Ban",
+    "description": "ログ解析により不正アクセスからサーバを自動防御するツール。",
+    "deviconId": "",
+    "categoryId": "security",
+    "tags": ["security", "server", "tool"]
+  },
+  {
+    "id": "skill_clamav",
+    "label": "ClamAV",
+    "description": "オープンソースのアンチウイルスエンジン。",
+    "deviconId": "",
+    "categoryId": "security",
+    "tags": ["security", "antivirus"]
+  },
+  {
+    "id": "skill_certbot",
+    "label": "Certbot",
+    "description": "Let's EncryptによるSSL証明書の自動発行・管理ツール。",
+    "deviconId": "",
+    "categoryId": "security",
+    "tags": ["security", "ssl", "automation"]
+  },
+  {
+    "id": "skill_openvas",
+    "label": "OpenVAS",
+    "description": "脆弱性スキャナーOSS。ネットワーク・ホスト診断に活用。",
+    "deviconId": "",
+    "categoryId": "security",
+    "tags": ["security", "scanner", "vulnerability"]
+  },
+  {
+    "id": "skill_iptables",
+    "label": "iptables",
+    "description": "Linuxカーネルのパケットフィルタリングフレームワーク。",
+    "deviconId": "",
+    "categoryId": "security",
+    "tags": ["security", "linux", "firewall"]
+  }
+]

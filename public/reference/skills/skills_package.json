@@ -1,0 +1,122 @@
+[
+  {
+    "id": "skill_composer",
+    "label": "Composer",
+    "description": "PHPのための依存関係管理ツール。",
+    "deviconId": "composer",
+    "categoryId": "package",
+    "tags": ["package", "php"]
+  },
+  {
+    "id": "skill_yarn",
+    "label": "Yarn",
+    "description": "Facebook開発のJavaScriptパッケージ管理ツール。",
+    "deviconId": "yarn",
+    "categoryId": "tool",
+    "tags": ["tool", "package", "javascript"]
+  },
+  {
+    "id": "skill_npm",
+    "label": "npm",
+    "description": "JavaScript用パッケージ管理ツール。",
+    "deviconId": "npm",
+    "categoryId": "tool",
+    "tags": ["tool", "package", "javascript"]
+  },
+  {
+    "id": "skill_webpack",
+    "label": "Webpack",
+    "description": "JavaScriptアプリ向けのモジュールバンドラ・パッケージ管理ツール。",
+    "deviconId": "webpack",
+    "categoryId": "package",
+    "tags": ["package", "javascript", "bundler"]
+  },
+  {
+    "id": "skill_pip",
+    "label": "pip",
+    "description": "Pythonの公式パッケージ管理ツール。",
+    "deviconId": "python",
+    "categoryId": "package",
+    "tags": ["package", "python"]
+  },
+  {
+    "id": "skill_poetry",
+    "label": "Poetry",
+    "description": "Pythonのための依存管理・パッケージビルドツール。",
+    "deviconId": "",
+    "categoryId": "package",
+    "tags": ["package", "python"]
+  },
+  {
+    "id": "skill_gem",
+    "label": "RubyGems",
+    "description": "Ruby用パッケージ管理ツール。",
+    "deviconId": "ruby",
+    "categoryId": "package",
+    "tags": ["package", "ruby"]
+  },
+  {
+    "id": "skill_maven",
+    "label": "Maven",
+    "description": "Javaプロジェクト用のビルド・パッケージ管理ツール。",
+    "deviconId": "maven",
+    "categoryId": "package",
+    "tags": ["package", "java"]
+  },
+  {
+    "id": "skill_gradle",
+    "label": "Gradle",
+    "description": "Java, Kotlin, Groovyなどのビルド自動化・依存管理ツール。",
+    "deviconId": "gradle",
+    "categoryId": "package",
+    "tags": ["package", "java", "kotlin", "groovy"]
+  },
+  {
+    "id": "skill_nuget",
+    "label": "NuGet",
+    "description": ".NET用パッケージ管理ツール。",
+    "deviconId": "",
+    "categoryId": "package",
+    "tags": ["package", "dotnet"]
+  },
+  {
+    "id": "skill_cargo",
+    "label": "Cargo",
+    "description": "Rustプログラム用パッケージマネージャ。",
+    "deviconId": "rust",
+    "categoryId": "package",
+    "tags": ["package", "rust"]
+  },
+  {
+    "id": "skill_pub",
+    "label": "Pub",
+    "description": "Dart/Flutter公式のパッケージ管理ツール。",
+    "deviconId": "",
+    "categoryId": "package",
+    "tags": ["package", "dart", "flutter"]
+  },
+  {
+    "id": "skill_pnpm",
+    "label": "pnpm",
+    "description": "効率的なJavaScriptパッケージ管理ツール。",
+    "deviconId": "",
+    "categoryId": "package",
+    "tags": ["package", "javascript"]
+  },
+  {
+    "id": "skill_bundler",
+    "label": "Bundler",
+    "description": "Rubyの依存管理用ツール。",
+    "deviconId": "",
+    "categoryId": "package",
+    "tags": ["package", "ruby"]
+  },
+  {
+    "id": "skill_bower",
+    "label": "Bower",
+    "description": "Web向けフロントエンドパッケージ管理ツール（非推奨）。",
+    "deviconId": "bower",
+    "categoryId": "package",
+    "tags": ["package", "javascript", "deprecated"]
+  }
+]

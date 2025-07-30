@@ -1,0 +1,22 @@
+[
+  {
+    "id": "analyst",
+    "label": "分析家",
+    "description": "独創的で戦略的な思想家。論理的で合理的な分析力が特徴。"
+  },
+  {
+    "id": "diplomat",
+    "label": "外交官",
+    "description": "他者への共感力と人間関係の構築が得意なタイプ。"
+  },
+  {
+    "id": "sentinel",
+    "label": "番人",
+    "description": "伝統や秩序を重んじ、責任感と安定感を持つ実直なタイプ。"
+  },
+  {
+    "id": "explorer",
+    "label": "探検家",
+    "description": "柔軟で冒険心があり、現実的かつ機転が利くタイプ。"
+  }
+]

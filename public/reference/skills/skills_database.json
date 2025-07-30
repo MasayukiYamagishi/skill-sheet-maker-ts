@@ -1,0 +1,74 @@
+[
+  {
+    "id": "skill_cassandra",
+    "label": "Cassandra",
+    "description": "分散型NoSQLデータベース管理システム。",
+    "deviconId": "cassandra",
+    "categoryId": "database",
+    "tags": ["database", "nosql"]
+  },
+  {
+    "id": "skill_mongodb",
+    "label": "MongoDB",
+    "description": "ドキュメント指向のNoSQLデータベース。",
+    "deviconId": "mongodb",
+    "categoryId": "database",
+    "tags": ["database", "nosql"]
+  },
+  {
+    "id": "skill_mysql",
+    "label": "MySQL",
+    "description": "世界的に広く使われるリレーショナルデータベース。",
+    "deviconId": "mysql",
+    "categoryId": "database",
+    "tags": ["database", "sql"]
+  },
+  {
+    "id": "skill_postgresql",
+    "label": "PostgreSQL",
+    "description": "拡張性に優れたオープンソースRDBMS。",
+    "deviconId": "postgresql",
+    "categoryId": "database",
+    "tags": ["database", "sql"]
+  },
+  {
+    "id": "skill_redis",
+    "label": "Redis",
+    "description": "高速なインメモリKVS型データベース。",
+    "deviconId": "redis",
+    "categoryId": "database",
+    "tags": ["database", "kvs"]
+  },
+  {
+    "id": "skill_sqlite",
+    "label": "SQLite",
+    "description": "組込み用途で人気の軽量RDBMS。",
+    "deviconId": "sqlite",
+    "categoryId": "database",
+    "tags": ["database", "sql"]
+  },
+  {
+    "id": "skill_tensorflow",
+    "label": "TensorFlow",
+    "description": "Google開発のオープンソース機械学習ライブラリ。",
+    "deviconId": "tensorflow",
+    "categoryId": "ai",
+    "tags": ["ai", "machinelearning", "google"]
+  },
+  {
+    "id": "skill_caffe",
+    "label": "Caffe",
+    "description": "深層学習向けの高速なフレームワーク。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "machinelearning", "deeplearning"]
+  },
+  {
+    "id": "skill_sklearn",
+    "label": "scikit-learn",
+    "description": "機械学習のためのPythonライブラリ。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "machinelearning", "python"]
+  }
+]

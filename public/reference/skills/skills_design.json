@@ -1,0 +1,42 @@
+[
+  {
+    "id": "skill_figma",
+    "label": "Figma",
+    "description": "クラウドベースのUI/UXデザインツール。",
+    "deviconId": "figma",
+    "categoryId": "design",
+    "tags": ["design", "tool", "ui"]
+  },
+  {
+    "id": "skill_photoshop",
+    "label": "Photoshop",
+    "description": "Adobe製の画像編集ソフトウェア。",
+    "deviconId": "photoshop",
+    "categoryId": "design",
+    "tags": ["design", "tool"]
+  },
+  {
+    "id": "skill_gimp",
+    "label": "GIMP",
+    "description": "オープンソースの画像編集ソフトウェア。",
+    "deviconId": "gimp",
+    "categoryId": "tool",
+    "tags": ["tool", "image", "design"]
+  },
+  {
+    "id": "skill_illustrator",
+    "label": "Illustrator",
+    "description": "Adobe製ベクターグラフィック作成ソフトウェア。",
+    "deviconId": "illustrator",
+    "categoryId": "design",
+    "tags": ["design", "vector"]
+  },
+  {
+    "id": "skill_opengl",
+    "label": "OpenGL",
+    "description": "クロスプラットフォームのグラフィックスAPI。",
+    "deviconId": "opengl",
+    "categoryId": "design",
+    "tags": ["design", "graphics", "api", "game", "3d", "library"]
+  }
+]

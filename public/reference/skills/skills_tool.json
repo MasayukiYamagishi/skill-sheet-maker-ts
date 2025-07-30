@@ -1,0 +1,162 @@
+[
+  {
+    "id": "skill_babel",
+    "label": "Babel",
+    "description": "最新のJavaScriptを古い環境でも動作させるトランスパイラ。",
+    "deviconId": "babel",
+    "categoryId": "tool",
+    "tags": ["javascript", "tool", "transpiler"]
+  },
+  {
+    "id": "skill_docker",
+    "label": "Docker",
+    "description": "コンテナ型仮想化技術の標準的ツール。",
+    "deviconId": "docker",
+    "categoryId": "tool",
+    "tags": ["tool", "container"]
+  },
+  {
+    "id": "skill_git",
+    "label": "Git",
+    "description": "分散型バージョン管理システム。",
+    "deviconId": "git",
+    "categoryId": "tool",
+    "tags": ["tool", "vcs"]
+  },
+  {
+    "id": "skill_github",
+    "label": "GitHub",
+    "description": "Gitリポジトリのホスティングサービス。",
+    "deviconId": "github",
+    "categoryId": "tool",
+    "tags": ["tool", "vcs"]
+  },
+  {
+    "id": "skill_gitlab",
+    "label": "GitLab",
+    "description": "DevOpsプラットフォームとしても有名なGitホスティング。",
+    "deviconId": "gitlab",
+    "categoryId": "tool",
+    "tags": ["tool", "vcs"]
+  },
+  {
+    "id": "skill_jupyter",
+    "label": "Jupyter",
+    "description": "インタラクティブなノートブック型開発環境。",
+    "deviconId": "jupyter",
+    "categoryId": "tool",
+    "tags": ["tool", "notebook", "data"]
+  },
+  {
+    "id": "skill_vscode",
+    "label": "VS Code",
+    "description": "Microsoft開発の人気エディタ。",
+    "deviconId": "vscode",
+    "categoryId": "tool",
+    "tags": ["tool", "editor"]
+  },
+  {
+    "id": "skill_confluence",
+    "label": "Confluence",
+    "description": "チーム向けのナレッジ共有・ドキュメント管理ツール。",
+    "deviconId": "confluence",
+    "categoryId": "tool",
+    "tags": ["tool", "documentation", "collaboration"]
+  },
+  {
+    "id": "skill_intellij",
+    "label": "IntelliJ IDEA",
+    "description": "Javaを中心とした多言語対応の統合開発環境（IDE）。",
+    "deviconId": "intellij",
+    "categoryId": "tool",
+    "tags": ["tool", "ide", "jetbrains"]
+  },
+  {
+    "id": "skill_unity",
+    "label": "Unity",
+    "description": "クロスプラットフォーム対応の人気ゲームエンジン。",
+    "deviconId": "unity",
+    "categoryId": "tool",
+    "tags": ["tool", "gameengine"]
+  },
+  {
+    "id": "skill_unrealengine",
+    "label": "Unreal Engine",
+    "description": "ハイエンドゲーム・映像制作向けゲームエンジン。",
+    "deviconId": "unrealengine",
+    "categoryId": "tool",
+    "tags": ["tool", "gameengine"]
+  },
+  {
+    "id": "skill_webflow",
+    "label": "Webflow",
+    "description": "ノーコードでWebサイトを制作できるデザインツール。",
+    "deviconId": "webflow",
+    "categoryId": "tool",
+    "tags": ["tool", "design", "nocode"]
+  },
+  {
+    "id": "skill_webstorm",
+    "label": "WebStorm",
+    "description": "フロントエンド開発に強いJetBrains製IDE。",
+    "deviconId": "webstorm",
+    "categoryId": "tool",
+    "tags": ["tool", "ide", "jetbrains"]
+  },
+  {
+    "id": "skill_xcode",
+    "label": "Xcode",
+    "description": "Apple公式のiOS・macOSアプリ開発用IDE。",
+    "deviconId": "xcode",
+    "categoryId": "tool",
+    "tags": ["tool", "ide", "apple"]
+  },
+  {
+    "id": "skill_slack",
+    "label": "Slack",
+    "description": "チームのコミュニケーションを促進するチャットプラットフォーム。",
+    "deviconId": "slack",
+    "categoryId": "tool",
+    "tags": ["tool", "communication", "collaboration"]
+  },
+  {
+    "id": "skill_trello",
+    "label": "Trello",
+    "description": "タスク・プロジェクト管理用のカンバン型ツール。",
+    "deviconId": "trello",
+    "categoryId": "tool",
+    "tags": ["tool", "projectmanagement"]
+  },
+  {
+    "id": "skill_bitbucket",
+    "label": "Bitbucket",
+    "description": "Atlassian社提供のGit/Mercurialホスティングサービス。",
+    "deviconId": "bitbucket",
+    "categoryId": "tool",
+    "tags": ["tool", "vcs", "hosting"]
+  },
+  {
+    "id": "skill_pycharm",
+    "label": "PyCharm",
+    "description": "Python開発に特化したJetBrains製IDE。",
+    "deviconId": "pycharm",
+    "categoryId": "tool",
+    "tags": ["tool", "ide", "jetbrains"]
+  },
+  {
+    "id": "skill_kubernetes",
+    "label": "Kubernetes",
+    "description": "大規模コンテナオーケストレーションのためのオープンソースシステム。",
+    "deviconId": "kubernetes",
+    "categoryId": "tool",
+    "tags": ["tool", "cloud", "container"]
+  },
+  {
+    "id": "skill_terraform",
+    "label": "Terraform",
+    "description": "インフラストラクチャをコードで管理できる構成管理ツール。",
+    "deviconId": "terraform",
+    "categoryId": "tool",
+    "tags": ["tool", "iac", "cloud"]
+  }
+]

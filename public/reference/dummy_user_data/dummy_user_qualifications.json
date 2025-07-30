@@ -1,0 +1,22 @@
+[
+  {
+    "user_id": "08250bb6-60a3-4e65-b0e6-dff9971c15f1",
+    "qualification_id": "q_basic_information_technology_engineer",
+    "acquired_at": "2007-10-01"
+  },
+  {
+    "user_id": "08250bb6-60a3-4e65-b0e6-dff9971c15f1",
+    "qualification_id": "q_applied_information_technology_engineer",
+    "acquired_at": "2010-04-01"
+  },
+  {
+    "user_id": "08250bb6-60a3-4e65-b0e6-dff9971c15f1",
+    "qualification_id": "q_information_security_support",
+    "acquired_at": "2015-04-01"
+  },
+  {
+    "user_id": "08250bb6-60a3-4e65-b0e6-dff9971c15f1",
+    "qualification_id": "q_g_test",
+    "acquired_at": "2018-07-01"
+  }
+]

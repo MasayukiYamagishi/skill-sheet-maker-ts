@@ -65,5 +65,7 @@ Thumbs.db
 temp/
 .tmp/
 
+public/docs
+
 # Claude
 .claude/

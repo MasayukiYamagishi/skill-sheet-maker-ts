@@ -1,0 +1,194 @@
+[
+  {
+    "id": "q_normal_drive_license_at",
+    "name": "普通自動車運転免許（AT限定）",
+    "description": "オートマチック車限定の普通自動車を運転できる国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_normal_drive_license_mt",
+    "name": "普通自動車運転免許（MT）",
+    "description": "マニュアル車・オートマ車両の普通自動車を運転できる国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_it_passport",
+    "name": "ITパスポート",
+    "description": "IT全般・ビジネス基礎知識を幅広く評価する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_basic_information_technology_engineer",
+    "name": "基本情報技術者試験",
+    "description": "ITエンジニアの登竜門的な国家試験。IT基礎力を証明。",
+    "is_national": true
+  },
+  {
+    "id": "q_applied_information_technology_engineer",
+    "name": "応用情報技術者試験",
+    "description": "IT技術・管理・戦略の知識を評価する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_information_security_support",
+    "name": "情報処理安全確保支援士試験",
+    "description": "サイバーセキュリティの専門知識・技能を認定する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_network_specialist",
+    "name": "ネットワークスペシャリスト試験",
+    "description": "ネットワーク設計・構築・運用の高度な知識を認定する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_database_specialist",
+    "name": "データベーススペシャリスト試験",
+    "description": "DB設計・運用管理・最適化のスキルを認定する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_system_architect",
+    "name": "システムアーキテクト試験",
+    "description": "大規模システム設計・構築の技術力を評価する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_project_manager",
+    "name": "プロジェクトマネージャ試験",
+    "description": "プロジェクト管理・マネジメント力を評価する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_aws_solutions_architect_associate",
+    "name": "AWS Certified Solutions Architect – Associate",
+    "description": "AWS上のシステム設計・運用の基礎スキルを認定する民間資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_aws_solutions_architect_professional",
+    "name": "AWS Certified Solutions Architect – Professional",
+    "description": "AWS上の大規模設計・最適化・管理スキルを認定する民間資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_oracle_master_bronze",
+    "name": "ORACLE MASTER Bronze",
+    "description": "Oracleデータベースの基本運用スキルを認定するベンダー資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_oracle_master_silver",
+    "name": "ORACLE MASTER Silver",
+    "description": "Oracle DB運用・管理・SQLの中級スキルを認定するベンダー資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_oracle_master_gold",
+    "name": "ORACLE MASTER Gold",
+    "description": "Oracle DB高度な運用・設計スキルを認定するベンダー資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_java_certification_1st_grade",
+    "name": "Javaプログラミング能力認定試験 1級",
+    "description": "Javaプログラミングの上級スキルを証明する民間資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_java_silver_se",
+    "name": "Java Silver SE",
+    "description": "Javaの基本文法・開発技術を評価するオラクル認定資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_java_gold_se",
+    "name": "Java Gold SE",
+    "description": "Javaの高度な設計・開発スキルを評価するオラクル認定資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_lpic_1",
+    "name": "LPIC-1",
+    "description": "Linux OSの基本操作・管理スキルを評価する認定資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_lpic_2",
+    "name": "LPIC-2",
+    "description": "Linux OSの中・上級管理スキルを評価する認定資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_ccna",
+    "name": "CCNA",
+    "description": "Ciscoネットワークの構築・運用に必要な技術を証明する資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_ccnp",
+    "name": "CCNP",
+    "description": "Ciscoネットワークの上級設計・運用スキルを認定する資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_python3_engineer_basic",
+    "name": "Python3エンジニア認定基礎試験",
+    "description": "Pythonの基本構文・基礎知識を評価する認定資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_python3_engineer_data_analysis",
+    "name": "Python3エンジニア認定データ分析試験",
+    "description": "Pythonのデータ分析・科学計算スキルを評価する認定資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_azure_fundamentals",
+    "name": "Microsoft Azure Fundamentals",
+    "description": "Azureクラウドの基礎知識・運用スキルを評価する資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_g_test",
+    "name": "G検定（ジェネラリスト検定）",
+    "description": "AI技術全般の知識を問う日本ディープラーニング協会の資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_e_test",
+    "name": "E資格（エンジニア資格）",
+    "description": "AI開発に関する知識・技術を問う日本ディープラーニング協会の資格。",
+    "is_national": false
+  },
+  {
+    "id": "q_it_strategist",
+    "name": "ITストラテジスト試験",
+    "description": "経営戦略やIT戦略の策定・推進に関する高度な知識を評価する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_system_auditor",
+    "name": "システム監査技術者試験",
+    "description": "ITシステムの監査・評価の専門スキルを認定する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_embedded_system_specialist",
+    "name": "エンベデッドシステムスペシャリスト試験",
+    "description": "組込みシステム開発・運用の高度な専門知識を評価する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_it_service_manager",
+    "name": "ITサービスマネージャ試験",
+    "description": "ITサービス運用・管理・品質保証に関する高度な知識を評価する国家資格。",
+    "is_national": true
+  },
+  {
+    "id": "q_system_operation_management_engineer",
+    "name": "システム運用管理エンジニア試験",
+    "description": "システムの運用・監視・障害対応など、運用管理に関する知識を評価する国家資格。",
+    "is_national": true
+  }
+]

@@ -1,0 +1,338 @@
+[
+  {
+    "id": "skill_apl",
+    "label": "APL",
+    "description": "数式表現に強いプログラミング言語。",
+    "deviconId": "apl",
+    "categoryId": "language",
+    "tags": ["programming", "language", "open-source", "cross-platform"]
+  },
+  {
+    "id": "skill_awk",
+    "label": "AWK",
+    "description": "テキスト処理に優れたスクリプト言語。",
+    "deviconId": "awk",
+    "categoryId": "language",
+    "tags": ["programming", "language", "unix"]
+  },
+  {
+    "id": "skill_bun",
+    "label": "Bun",
+    "description": "高速なJavaScriptランタイムおよびツールチェーン。",
+    "deviconId": "bun",
+    "categoryId": "language",
+    "tags": ["javascript", "zig", "language"]
+  },
+  {
+    "id": "skill_c",
+    "label": "C",
+    "description": "汎用的かつ高速なシステムプログラミング言語。",
+    "deviconId": "c",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_carbon",
+    "label": "Carbon",
+    "description": "C++の後継を目指す新しいプログラミング言語。",
+    "deviconId": "carbon",
+    "categoryId": "language",
+    "tags": ["programming", "language"]
+  },
+  {
+    "id": "skill_clojure",
+    "label": "Clojure",
+    "description": "JVM上で動作する関数型プログラミング言語。",
+    "deviconId": "clojure",
+    "categoryId": "language",
+    "tags": ["language", "jvm"]
+  },
+  {
+    "id": "skill_clojurescript",
+    "label": "ClojureScript",
+    "description": "JavaScriptへの変換が可能な関数型プログラミング言語。",
+    "deviconId": "clojurescript",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_coffeescript",
+    "label": "CoffeeScript",
+    "description": "JavaScriptを簡潔に書けるトランスパイラ言語。",
+    "deviconId": "coffeescript",
+    "categoryId": "language",
+    "tags": ["javascript", "transpiler", "language"]
+  },
+  {
+    "id": "skill_cplusplus",
+    "label": "C++",
+    "description": "オブジェクト指向を持つC言語拡張のプログラミング言語。",
+    "deviconId": "cplusplus",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_crystal",
+    "label": "Crystal",
+    "description": "Rubyに似た構文を持つ高速なコンパイル型言語。",
+    "deviconId": "crystal",
+    "categoryId": "language",
+    "tags": ["programming", "language"]
+  },
+  {
+    "id": "skill_csharp",
+    "label": "C#",
+    "description": "Microsoftが開発した多用途プログラミング言語。",
+    "deviconId": "csharp",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_css3",
+    "label": "CSS3",
+    "description": "ウェブページのスタイリング用言語。",
+    "deviconId": "css3",
+    "categoryId": "language",
+    "tags": ["language", "programming"]
+  },
+  {
+    "id": "skill_dart",
+    "label": "Dart",
+    "description": "Google開発のウェブ＆モバイルアプリ向け言語。",
+    "deviconId": "dart",
+    "categoryId": "language",
+    "tags": ["programming", "language"]
+  },
+  {
+    "id": "skill_elixir",
+    "label": "Elixir",
+    "description": "Erlang VM上で動作する関数型言語。",
+    "deviconId": "elixir",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_embeddedc",
+    "label": "Embedded C",
+    "description": "組込みシステム向けのC言語拡張。",
+    "deviconId": "embeddedc",
+    "categoryId": "language",
+    "tags": ["language", "programming"]
+  },
+  {
+    "id": "skill_fsharp",
+    "label": "F#",
+    "description": "Microsoft開発の関数型プログラミング言語。",
+    "deviconId": "fsharp",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_fortran",
+    "label": "Fortran",
+    "description": "科学技術計算向けの老舗プログラミング言語。",
+    "deviconId": "fortran",
+    "categoryId": "language",
+    "tags": ["programming", "language"]
+  },
+  {
+    "id": "skill_go",
+    "label": "Go",
+    "description": "Google開発のシンプルで効率的な言語。",
+    "deviconId": "go",
+    "categoryId": "language",
+    "tags": ["programming", "language"]
+  },
+  {
+    "id": "skill_groovy",
+    "label": "Groovy",
+    "description": "JVM上で動作するダイナミック言語。",
+    "deviconId": "groovy",
+    "categoryId": "language",
+    "tags": ["language", "java", "jvm"]
+  },
+  {
+    "id": "skill_haskell",
+    "label": "Haskell",
+    "description": "純粋関数型プログラミング言語。",
+    "deviconId": "haskell",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_html5",
+    "label": "HTML5",
+    "description": "ウェブページの構造記述用マークアップ言語。",
+    "deviconId": "html5",
+    "categoryId": "language",
+    "tags": ["language", "web"]
+  },
+  {
+    "id": "skill_java",
+    "label": "Java",
+    "description": "幅広く利用されるオブジェクト指向言語。",
+    "deviconId": "java",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_javascript",
+    "label": "JavaScript",
+    "description": "ウェブ開発で主流のスクリプト言語。",
+    "deviconId": "javascript",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_julia",
+    "label": "Julia",
+    "description": "高速な数値計算を得意とする言語。",
+    "deviconId": "julia",
+    "categoryId": "language",
+    "tags": ["programming", "language"]
+  },
+  {
+    "id": "skill_kotlin",
+    "label": "Kotlin",
+    "description": "JVMやAndroidで動作する静的型付け言語。",
+    "deviconId": "kotlin",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_lua",
+    "label": "Lua",
+    "description": "軽量スクリプト言語としてゲーム開発等で使用。",
+    "deviconId": "lua",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_matlab",
+    "label": "MATLAB",
+    "description": "数値解析や可視化に用いられる高水準言語。",
+    "deviconId": "matlab",
+    "categoryId": "language",
+    "tags": ["language", "programming"]
+  },
+  {
+    "id": "skill_nim",
+    "label": "Nim",
+    "description": "効率的なシステムプログラミング言語。",
+    "deviconId": "nim",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_objectivec",
+    "label": "Objective-C",
+    "description": "C言語にオブジェクト指向を追加した言語。",
+    "deviconId": "objectivec",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_perl",
+    "label": "Perl",
+    "description": "テキスト処理に強いスクリプト言語。",
+    "deviconId": "perl",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_php",
+    "label": "PHP",
+    "description": "動的Webページ生成用スクリプト言語。",
+    "deviconId": "php",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_powershell",
+    "label": "PowerShell",
+    "description": "Windowsの自動化用スクリプト言語。",
+    "deviconId": "powershell",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_python",
+    "label": "Python",
+    "description": "多用途・簡潔な構文の高水準プログラミング言語。",
+    "deviconId": "python",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_r",
+    "label": "R",
+    "description": "統計解析向けプログラミング言語。",
+    "deviconId": "r",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_ruby",
+    "label": "Ruby",
+    "description": "日本発のオブジェクト指向スクリプト言語。",
+    "deviconId": "ruby",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_rust",
+    "label": "Rust",
+    "description": "安全性と速度を重視したシステムプログラミング言語。",
+    "deviconId": "rust",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_scala",
+    "label": "Scala",
+    "description": "関数型とオブジェクト指向を融合したJVM言語。",
+    "deviconId": "scala",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_shell",
+    "label": "Shell",
+    "description": "コマンドラインシェルスクリプト言語。",
+    "deviconId": "shell",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_sql",
+    "label": "SQL",
+    "description": "リレーショナルデータベース操作用言語。",
+    "deviconId": "sql",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_swift",
+    "label": "Swift",
+    "description": "Appleのアプリ開発向け高速言語。",
+    "deviconId": "swift",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_typescript",
+    "label": "TypeScript",
+    "description": "JavaScriptに型付けを加えた言語。",
+    "deviconId": "typescript",
+    "categoryId": "language",
+    "tags": ["language"]
+  },
+  {
+    "id": "skill_graphql",
+    "label": "GraphQL",
+    "description": "APIの問い合わせ言語およびランタイム。",
+    "deviconId": "graphql",
+    "categoryId": "language",
+    "tags": ["language", "api"]
+  }
+]

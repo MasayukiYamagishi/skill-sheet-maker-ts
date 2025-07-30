@@ -1,0 +1,106 @@
+[
+  {
+    "id": "skill_nginx",
+    "label": "NGINX",
+    "description": "高性能Webサーバ・リバースプロキシ。",
+    "deviconId": "nginx",
+    "categoryId": "network",
+    "tags": ["network", "server", "web"]
+  },
+  {
+    "id": "skill_apache",
+    "label": "Apache HTTP Server",
+    "description": "最も普及しているWebサーバソフトウェア。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "server", "web"]
+  },
+  {
+    "id": "skill_dns",
+    "label": "DNS",
+    "description": "ドメイン名とIPアドレスを変換するネットワーク基盤技術。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "protocol", "infrastructure"]
+  },
+  {
+    "id": "skill_dhcp",
+    "label": "DHCP",
+    "description": "IPアドレス等のネットワーク設定情報を自動割り当てするプロトコル。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "protocol"]
+  },
+  {
+    "id": "skill_tcpip",
+    "label": "TCP/IP",
+    "description": "インターネットを支える基盤通信プロトコル群。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "protocol", "infrastructure"]
+  },
+  {
+    "id": "skill_http",
+    "label": "HTTP",
+    "description": "Web通信で用いられるプロトコル。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "protocol", "web"]
+  },
+  {
+    "id": "skill_https",
+    "label": "HTTPS",
+    "description": "SSL/TLSを用いた暗号化Web通信プロトコル。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "protocol", "web", "security"]
+  },
+  {
+    "id": "skill_loadbalancer",
+    "label": "Load Balancer",
+    "description": "ネットワークトラフィックを複数のサーバに分散する装置・ソフトウェア。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "infrastructure", "scalability"]
+  },
+  {
+    "id": "skill_vpn",
+    "label": "VPN",
+    "description": "暗号化技術を用いて仮想的な専用ネットワークを実現する仕組み。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "security"]
+  },
+  {
+    "id": "skill_firewall",
+    "label": "Firewall",
+    "description": "通信の制御や不正アクセスの防御を行うセキュリティ装置・ソフトウェア。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "security"]
+  },
+  {
+    "id": "skill_switch",
+    "label": "L2/L3 Switch",
+    "description": "ネットワークのパケット転送を行う機器（レイヤ2/3スイッチ）。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "hardware", "infrastructure"]
+  },
+  {
+    "id": "skill_router",
+    "label": "Router",
+    "description": "異なるネットワーク間の通信経路を制御する機器。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "hardware", "infrastructure"]
+  },
+  {
+    "id": "skill_wireshark",
+    "label": "Wireshark",
+    "description": "ネットワークパケットの解析・監視ツール。",
+    "deviconId": "",
+    "categoryId": "network",
+    "tags": ["network", "tool", "analyze"]
+  }
+]

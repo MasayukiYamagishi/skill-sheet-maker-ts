@@ -1,0 +1,114 @@
+[
+  {
+    "id": "skill_heroku",
+    "label": "Heroku",
+    "description": "PaaS型クラウドアプリケーションプラットフォーム。",
+    "deviconId": "heroku",
+    "categoryId": "cloud",
+    "tags": ["cloud", "paas"]
+  },
+  {
+    "id": "skill_aws",
+    "label": "AWS",
+    "description": "Amazonが提供するクラウドサービス群。",
+    "deviconId": "amazonwebservices",
+    "categoryId": "cloud",
+    "tags": ["cloud", "aws"]
+  },
+  {
+    "id": "skill_googlecloud",
+    "label": "Google Cloud Platform",
+    "description": "Google提供のクラウドサービス群。",
+    "deviconId": "googlecloud",
+    "categoryId": "cloud",
+    "tags": ["cloud", "gcp"]
+  },
+  {
+    "id": "skill_azure",
+    "label": "Microsoft Azure",
+    "description": "Microsoftが提供するエンタープライズ向けクラウドサービス。",
+    "deviconId": "azure",
+    "categoryId": "cloud",
+    "tags": ["cloud", "microsoft"]
+  },
+  {
+    "id": "skill_ibmcloud",
+    "label": "IBM Cloud",
+    "description": "IBMが提供する統合クラウドプラットフォーム。",
+    "deviconId": "",
+    "categoryId": "cloud",
+    "tags": ["cloud", "ibm"]
+  },
+  {
+    "id": "skill_oraclecloud",
+    "label": "Oracle Cloud",
+    "description": "Oracle社が提供するクラウドサービス群。",
+    "deviconId": "",
+    "categoryId": "cloud",
+    "tags": ["cloud", "oracle"]
+  },
+  {
+    "id": "skill_sakuracloud",
+    "label": "さくらのクラウド",
+    "description": "さくらインターネットが提供する国内IaaSクラウド。",
+    "deviconId": "",
+    "categoryId": "cloud",
+    "tags": ["cloud", "japan"]
+  },
+  {
+    "id": "skill_digitalocean",
+    "label": "DigitalOcean",
+    "description": "開発者向けに特化したシンプルなクラウドインフラ。",
+    "deviconId": "digitalocean",
+    "categoryId": "cloud",
+    "tags": ["cloud", "iaas"]
+  },
+  {
+    "id": "skill_vercel",
+    "label": "Vercel",
+    "description": "フロントエンドに特化したクラウドプラットフォーム。",
+    "deviconId": "",
+    "categoryId": "cloud",
+    "tags": ["cloud", "frontend", "serverless"]
+  },
+  {
+    "id": "skill_netlify",
+    "label": "Netlify",
+    "description": "Jamstack向けのホスティングサービス。",
+    "deviconId": "",
+    "categoryId": "cloud",
+    "tags": ["cloud", "jamstack", "hosting"]
+  },
+  {
+    "id": "skill_firebase",
+    "label": "Firebase",
+    "description": "GoogleのBaaS型モバイル・Webアプリ向けクラウドサービス。",
+    "deviconId": "firebase",
+    "categoryId": "cloud",
+    "tags": ["cloud", "baas", "google"]
+  },
+  {
+    "id": "skill_amplify",
+    "label": "AWS Amplify",
+    "description": "モバイル・WebアプリのためのAWSのフルスタックBaaS。",
+    "deviconId": "",
+    "categoryId": "cloud",
+    "tags": ["cloud", "aws", "baas"]
+  },
+  {
+    "id": "skill_cloudflare",
+    "label": "Cloudflare",
+    "description": "CDN・サーバレスなどを提供するクラウドインフラ。",
+    "deviconId": "",
+    "categoryId": "cloud",
+    "tags": ["cloud", "cdn", "serverless"]
+  },
+  {
+    "id": "skill_openstack",
+    "label": "OpenStack",
+    "description": "オープンソースのクラウドOS、IaaS構築基盤。",
+    "deviconId": "",
+    "categoryId": "cloud",
+    "tags": ["cloud", "open source", "iaas"]
+  }
+]

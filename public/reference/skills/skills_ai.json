@@ -1,0 +1,210 @@
+[
+  {
+    "id": "skill_chatgpt",
+    "label": "ChatGPT",
+    "description": "OpenAI開発の大規模言語モデルAIチャットボット。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "llm", "chatbot", "openai"]
+  },
+  {
+    "id": "skill_claude",
+    "label": "Claude",
+    "description": "Anthropic社開発の大規模言語モデル。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "llm", "chatbot", "anthropic"]
+  },
+  {
+    "id": "skill_perplexity",
+    "label": "Perplexity",
+    "description": "検索連携AIチャットボット。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "llm", "search"]
+  },
+  {
+    "id": "skill_codex",
+    "label": "Codex",
+    "description": "OpenAIのプログラミング支援特化型LLM。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "llm", "codegeneration", "openai"]
+  },
+  {
+    "id": "skill_githubcopilot",
+    "label": "GitHub Copilot",
+    "description": "GitHubとOpenAIが共同開発したAIコード補完ツール。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "codecompletion", "openai", "github"]
+  },
+  {
+    "id": "skill_microsoftcopilot",
+    "label": "Microsoft Copilot",
+    "description": "Microsoft製の生成AIアシスタント。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "assistant", "microsoft"]
+  },
+  {
+    "id": "skill_amazonq",
+    "label": "Amazon Q",
+    "description": "AWSによる生成AIアシスタント。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "assistant", "aws"]
+  },
+  {
+    "id": "skill_gemini",
+    "label": "Gemini",
+    "description": "Google開発の大規模言語モデル。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "llm", "google"]
+  },
+  {
+    "id": "skill_devin",
+    "label": "Devin",
+    "description": "AIエージェント型ソフトウェアエンジニア。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "agent", "codegeneration"]
+  },
+  {
+    "id": "skill_replitagent",
+    "label": "Replit Agent",
+    "description": "Replitが提供するAIエージェント。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "agent", "replit"]
+  },
+  {
+    "id": "skill_claude_code",
+    "label": "Claude Code",
+    "description": "Claudeのコード生成特化型機能。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "llm", "codegeneration", "anthropic"]
+  },
+  {
+    "id": "skill_cursor",
+    "label": "Cursor",
+    "description": "AIを搭載したコードエディタ。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "editor", "codecompletion"]
+  },
+  {
+    "id": "skill_windsurf",
+    "label": "Windsurf",
+    "description": "AI研究用エージェント基盤。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "agent"]
+  },
+  {
+    "id": "skill_cline",
+    "label": "Cline",
+    "description": "AIコード生成・支援ツール。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "codegeneration"]
+  },
+  {
+    "id": "skill_aide",
+    "label": "AIDE",
+    "description": "AIベースのIDE/開発支援ツール。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "ide", "assistant"]
+  },
+  {
+    "id": "skill_trae",
+    "label": "Trae",
+    "description": "AIを活用した開発支援ツール。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "assistant"]
+  },
+  {
+    "id": "skill_lovable",
+    "label": "Lovable",
+    "description": "AI技術搭載の開発支援サービス。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "assistant"]
+  },
+  {
+    "id": "skill_codev",
+    "label": "Codev",
+    "description": "AIを活用した自動コード生成・レビュー支援ツール。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "codegeneration"]
+  },
+  {
+    "id": "skill_ollama",
+    "label": "Ollama",
+    "description": "ローカルで大規模言語モデル（LLM）を簡単に実行できるAIツール。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "llm", "local"]
+  },
+  {
+    "id": "skill_langchain",
+    "label": "LangChain",
+    "description": "Python・JavaScript向けのAIエージェント/LLM活用フレームワーク。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "framework", "llm", "agent"]
+  },
+  {
+    "id": "skill_langgraph",
+    "label": "LangGraph",
+    "description": "LangChain拡張のAIワークフロー構築用フレームワーク。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "framework", "llm", "workflow"]
+  },
+  {
+    "id": "skill_litellm",
+    "label": "LiteLLM",
+    "description": "多数のLLMプロバイダに対応した推論API・ラッパー。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "llm", "api"]
+  },
+  {
+    "id": "skill_openai",
+    "label": "OpenAI API",
+    "description": "GPTシリーズやDALL·EなどのAPIを提供するプラットフォーム。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "api", "llm", "openai"]
+  },
+  {
+    "id": "skill_ragstack",
+    "label": "RAGStack",
+    "description": "Retrieval Augmented Generation（RAG）構成のOSSスタック。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "rag", "retrieval", "stack"]
+  },
+  {
+    "id": "skill_llamaindex",
+    "label": "LlamaIndex",
+    "description": "LLMとデータ接続を簡単にするためのAIフレームワーク。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "framework", "llm", "data"]
+  },
+  {
+    "id": "skill_bert",
+    "label": "BERT",
+    "description": "自然言語処理分野で広く使われるGoogle開発の事前学習済みAIモデル。",
+    "deviconId": "",
+    "categoryId": "ai",
+    "tags": ["ai", "nlp", "ml"]
+  }
+]

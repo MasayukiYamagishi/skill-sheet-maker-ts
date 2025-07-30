@@ -1,0 +1,138 @@
+[
+  {
+    "id": "skill_pandas",
+    "label": "pandas",
+    "description": "Pythonのためのデータ解析・分析ライブラリ。",
+    "deviconId": "pandas",
+    "categoryId": "datascience",
+    "tags": ["datascience", "python", "analysis"]
+  },
+  {
+    "id": "skill_numpy",
+    "label": "NumPy",
+    "description": "Pythonの数値計算・線形代数ライブラリ。",
+    "deviconId": "numpy",
+    "categoryId": "datascience",
+    "tags": ["datascience", "python", "math"]
+  },
+  {
+    "id": "skill_scipy",
+    "label": "SciPy",
+    "description": "科学技術計算・統計・最適化のためのPythonライブラリ。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "python", "science"]
+  },
+  {
+    "id": "skill_matplotlib",
+    "label": "Matplotlib",
+    "description": "Pythonの定番2D/3Dグラフ描画ライブラリ。",
+    "deviconId": "matplotlib",
+    "categoryId": "datascience",
+    "tags": ["datascience", "python", "visualization"]
+  },
+  {
+    "id": "skill_seaborn",
+    "label": "Seaborn",
+    "description": "Pythonの高度な統計データ可視化ライブラリ。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "python", "visualization"]
+  },
+  {
+    "id": "skill_plotly",
+    "label": "Plotly",
+    "description": "インタラクティブなグラフ・ダッシュボードを作成するライブラリ（Python/R/JS対応）。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "visualization", "dashboard"]
+  },
+  {
+    "id": "skill_scikit-learn",
+    "label": "scikit-learn",
+    "description": "Pythonで機械学習モデル構築・評価を行うための主要ライブラリ。",
+    "deviconId": "scikitlearn",
+    "categoryId": "datascience",
+    "tags": ["datascience", "python", "machinelearning"]
+  },
+  {
+    "id": "skill_pytorch",
+    "label": "PyTorch",
+    "description": "Facebook製の動的深層学習ライブラリ。",
+    "deviconId": "pytorch",
+    "categoryId": "datascience",
+    "tags": ["datascience", "machinelearning", "deeplearning", "framework"]
+  },
+  {
+    "id": "skill_lightgbm",
+    "label": "LightGBM",
+    "description": "Microsoft製の高速・高精度な勾配ブースティング決定木ライブラリ。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "machinelearning", "boosting"]
+  },
+  {
+    "id": "skill_xgboost",
+    "label": "XGBoost",
+    "description": "機械学習のための高速・高精度な勾配ブースティングライブラリ。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "machinelearning", "boosting"]
+  },
+  {
+    "id": "skill_catboost",
+    "label": "CatBoost",
+    "description": "カテゴリ変数を自然に扱える勾配ブースティングライブラリ。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "machinelearning", "boosting"]
+  },
+  {
+    "id": "skill_keras",
+    "label": "Keras",
+    "description": "高水準ニューラルネットワークAPI（TensorFlowなど上で動作）。",
+    "deviconId": "keras",
+    "categoryId": "datascience",
+    "tags": ["datascience", "deeplearning", "machinelearning"]
+  },
+  {
+    "id": "skill_statsmodels",
+    "label": "Statsmodels",
+    "description": "統計モデリング・時系列解析のためのPythonライブラリ。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "python", "statistics"]
+  },
+  {
+    "id": "skill_nltk",
+    "label": "NLTK",
+    "description": "自然言語処理（NLP）向けPythonライブラリ。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "nlp", "python"]
+  },
+  {
+    "id": "skill_spacy",
+    "label": "spaCy",
+    "description": "高速・高精度なNLPのためのPythonライブラリ。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "nlp", "python"]
+  },
+  {
+    "id": "skill_jupyter",
+    "label": "Jupyter",
+    "description": "インタラクティブなノートブック環境（Jupyter Notebook/Lab）。",
+    "deviconId": "jupyter",
+    "categoryId": "datascience",
+    "tags": ["datascience", "notebook", "python", "interactive"]
+  },
+  {
+    "id": "skill_colab",
+    "label": "Google Colab",
+    "description": "Googleが提供するクラウド型Python実行環境。",
+    "deviconId": "",
+    "categoryId": "datascience",
+    "tags": ["datascience", "cloud", "python"]
+  }
+]
