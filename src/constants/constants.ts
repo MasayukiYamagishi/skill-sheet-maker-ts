@@ -17,10 +17,10 @@ export const UserStatusConst = {
 
 /** ユーザステータスごとのクラス名マップ. */
 export const UserStatusBadgeClass: Record<UserStatus, string> = {
-  inProject: 'badge badge-primary',
-  available: 'badge badge-secondary',
-  onLeave: 'badge badge-neutral',
-  retired: 'badge badge-accent',
+  inProject: 'badge badge-info',
+  available: 'badge badge-success',
+  onLeave: 'badge badge-warning',
+  retired: 'badge badge-error',
 };
 
 /** 担当工程マスタ. */
