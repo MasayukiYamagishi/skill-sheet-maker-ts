@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
 
-// Validation schema for user update
+// ユーザー更新用のバリデーションスキーマ
 const updateUserSchema = z.object({
   userIdentifier: z.string().min(1).optional(),
   name: z.string().min(1).optional(),
@@ -42,7 +42,7 @@ const updateUserSchema = z.object({
   otherSkills: z.string().optional(),
 });
 
-// GET /api/users/[id] - fetch_user_by_id
+// GET /api/users/[id] - 指定IDのユーザー情報取得
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -50,6 +50,7 @@ export async function GET(
   try {
     const { id } = params;
 
+    // 指定IDのユーザー情報を関連データと共に取得
     const user = await prisma.user.findUnique({
       where: { id },
       include: {
@@ -115,17 +116,18 @@ export async function GET(
   }
 }
 
-// PUT /api/users/[id] - update_user_by_id
+// PUT /api/users/[id] - 指定IDのユーザー情報更新
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
     const { id } = params;
+    // リクエストボディの取得とバリデーション
     const body = await request.json();
     const validatedData = updateUserSchema.parse(body);
 
-    // Check if user exists
+    // 更新対象ユーザーの存在チェック
     const existingUser = await prisma.user.findUnique({
       where: { id },
     });
@@ -140,7 +142,7 @@ export async function PUT(
       );
     }
 
-    // Check for duplicate userIdentifier or email (excluding current user)
+    // ユーザー識別子とメールアドレスの重複チェック（現在のユーザーを除く）
     if (validatedData.userIdentifier || validatedData.email) {
       const duplicateUser = await prisma.user.findFirst({
         where: {
@@ -203,7 +205,7 @@ export async function PUT(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );
@@ -220,7 +222,7 @@ export async function PUT(
   }
 }
 
-// DELETE /api/users/[id] - delete_user_by_ids (single user)
+// DELETE /api/users/[id] - 指定IDのユーザー削除
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -228,7 +230,7 @@ export async function DELETE(
   try {
     const { id } = params;
 
-    // Check if user exists
+    // 削除対象ユーザーの存在チェック
     const existingUser = await prisma.user.findUnique({
       where: { id },
     });

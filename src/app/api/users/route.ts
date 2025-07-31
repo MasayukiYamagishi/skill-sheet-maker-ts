@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
 
-// Validation schema for user creation/update
+// ユーザー作成・更新用のバリデーションスキーマ
 const createUserSchema = z.object({
   userIdentifier: z.string().min(1),
   name: z.string().min(1),
@@ -39,9 +39,10 @@ const createUserSchema = z.object({
   otherSkills: z.string().optional(),
 });
 
-// GET /api/users - fetch_all_users
+// GET /api/users - 全ユーザー情報取得
 export async function GET() {
   try {
+    // 全ユーザー情報を関連データと共に取得
     const users = await prisma.user.findMany({
       include: {
         mbtiTypeRef: true,
@@ -96,13 +97,14 @@ export async function GET() {
   }
 }
 
-// POST /api/users - insert_user
+// POST /api/users - ユーザー新規登録
 export async function POST(request: NextRequest) {
   try {
+    // リクエストボディを取得してバリデーション実行
     const body = await request.json();
     const validatedData = createUserSchema.parse(body);
 
-    // Check for duplicate userIdentifier or email
+    // ユーザー識別子とメールアドレスの重複チェック
     const existingUser = await prisma.user.findFirst({
       where: {
         OR: [
@@ -152,7 +154,7 @@ export async function POST(request: NextRequest) {
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );

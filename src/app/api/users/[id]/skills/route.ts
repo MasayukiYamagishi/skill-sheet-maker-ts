@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
 
-// Schema for user skill operations
+// ユーザースキル操作用のスキーマ
 const userSkillSchema = z.object({
   skillId: z.string().min(1),
   version: z.string().optional(),
@@ -12,7 +12,7 @@ const bulkUserSkillSchema = z.object({
   skills: z.array(userSkillSchema).min(1),
 });
 
-// GET /api/users/[id]/skills - fetch_user_skills_by_user_id
+// GET /api/users/[id]/skills - 指定ユーザーIDのスキル一覧取得
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -20,7 +20,7 @@ export async function GET(
   try {
     const { id: userId } = params;
 
-    // Check if user exists
+    // ユーザーの存在チェック
     const user = await prisma.user.findUnique({
       where: { id: userId },
       select: { id: true },
@@ -79,7 +79,7 @@ export async function GET(
   }
 }
 
-// POST /api/users/[id]/skills - insert_user_skills
+// POST /api/users/[id]/skills - ユーザースキル新規登録
 export async function POST(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -88,7 +88,7 @@ export async function POST(
     const { id: userId } = params;
     const body = await request.json();
 
-    // Handle both single skill and bulk skills
+    // 単一スキルと一括スキルの両方に対応
     let skillsData;
     if (Array.isArray(body.skills)) {
       skillsData = bulkUserSkillSchema.parse(body).skills;
@@ -96,7 +96,7 @@ export async function POST(
       skillsData = [userSkillSchema.parse(body)];
     }
 
-    // Check if user exists
+    // ユーザーの存在チェック
     const user = await prisma.user.findUnique({
       where: { id: userId },
       select: { id: true },
@@ -112,7 +112,7 @@ export async function POST(
       );
     }
 
-    // Check if skills exist
+    // スキルの存在チェック
     const skillIds = skillsData.map((skill) => skill.skillId);
     const existingSkills = await prisma.skill.findMany({
       where: { id: { in: skillIds } },
@@ -137,6 +137,7 @@ export async function POST(
 
     // Use upsert to handle duplicates (skip existing ones)
     const results = [];
+    // 各スキルをアップサート処理（新規作成または更新）
     for (const skillData of skillsData) {
       const result = await prisma.userSkill.upsert({
         where: {
@@ -178,7 +179,7 @@ export async function POST(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );
@@ -264,7 +265,7 @@ export async function PUT(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );
@@ -315,7 +316,7 @@ export async function DELETE(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );

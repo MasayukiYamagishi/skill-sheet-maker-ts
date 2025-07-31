@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
 
-// Schema for career skill operations
+// 経歴スキル操作用のスキーマ
 const careerSkillSchema = z.object({
   skillId: z.string().min(1),
   version: z.string().optional(),
@@ -12,7 +12,7 @@ const bulkCareerSkillSchema = z.object({
   skills: z.array(careerSkillSchema).min(1),
 });
 
-// GET /api/career-histories/[careerId]/skills - fetch_career_skills_by_career_ids
+// GET /api/career-histories/[careerId]/skills - 指定経歴IDのスキル一覧取得
 export async function GET(
   request: NextRequest,
   { params }: { params: { careerId: string } }
@@ -128,7 +128,7 @@ export async function POST(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );
@@ -179,7 +179,7 @@ export async function DELETE(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );

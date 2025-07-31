@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
 
-// Schema for career process operations
+// 経歴担当工程操作用のスキーマ
 const careerProcessSchema = z.object({
   processIds: z.array(z.number().int().positive()).min(1),
 });
 
-// GET /api/career-histories/[careerId]/processes - fetch_career_processes_by_career_ids
+// GET /api/career-histories/[careerId]/processes - 指定経歴IDの担当工程一覧取得
 export async function GET(
   request: NextRequest,
   { params }: { params: { careerId: string } }
@@ -129,7 +129,7 @@ export async function POST(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );
@@ -180,7 +180,7 @@ export async function DELETE(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );

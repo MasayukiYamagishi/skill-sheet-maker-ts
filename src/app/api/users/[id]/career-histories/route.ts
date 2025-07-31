@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
 
-// Schema for career history operations
+// 経歴情報操作用のスキーマ
 const careerHistorySchema = z.object({
   title: z.string().min(1),
   startedAt: z
@@ -26,7 +26,7 @@ const bulkCareerHistorySchema = z.object({
   careerHistories: z.array(careerHistorySchema).min(1),
 });
 
-// GET /api/users/[userId]/career-histories - fetch_career_history_by_user_id
+// GET /api/users/[userId]/career-histories - 指定ユーザーIDの経歴情報取得
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -165,7 +165,7 @@ export async function POST(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );

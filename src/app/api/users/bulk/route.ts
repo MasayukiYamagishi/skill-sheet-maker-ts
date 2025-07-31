@@ -2,18 +2,19 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
 
-// Schema for bulk delete
+// 一括削除用のスキーマ
 const bulkDeleteSchema = z.object({
   ids: z.array(z.string().uuid()).min(1),
 });
 
-// DELETE /api/users/bulk - delete_user_by_ids (multiple users)
+// DELETE /api/users/bulk - 複数ユーザーの一括削除
 export async function DELETE(request: NextRequest) {
   try {
+    // リクエストボディの取得とバリデーション
     const body = await request.json();
     const { ids } = bulkDeleteSchema.parse(body);
 
-    // Check if all users exist
+    // 削除対象のユーザーが全て存在するかチェック
     const existingUsers = await prisma.user.findMany({
       where: {
         id: {
@@ -56,7 +57,7 @@ export async function DELETE(request: NextRequest) {
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );

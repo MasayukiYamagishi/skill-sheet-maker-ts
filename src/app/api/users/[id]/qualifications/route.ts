@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
-// Schema for user qualification operations
+// ユーザー資格操作用のスキーマ
 const userQualificationSchema = z.object({
   qualificationId: z.string().min(1),
   acquiredAt: z
@@ -17,7 +17,7 @@ const bulkUserQualificationSchema = z.object({
   qualifications: z.array(userQualificationSchema).min(1),
 });
 
-// GET /api/users/[userId]/qualifications - fetch_user_qualifications_by_user_id
+// GET /api/users/[userId]/qualifications - 指定ユーザーIDの資格一覧取得
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -25,7 +25,7 @@ export async function GET(
   try {
     const { id: userId } = params;
 
-    // Check if user exists
+    // ユーザーの存在チェック
     const user = await prisma.user.findUnique({
       where: { id: userId },
       select: { id: true },
@@ -101,7 +101,7 @@ export async function POST(
       );
     }
 
-    // Check if qualifications exist
+    // 資格の存在チェック
     const qualificationIds = qualificationsData.map((q) => q.qualificationId);
     const existingQualifications = await prisma.qualification.findMany({
       where: { id: { in: qualificationIds } },
@@ -124,6 +124,7 @@ export async function POST(
       );
     }
 
+    // 各資格を新規登録（重複はスキップ）
     const results = [];
     for (const qualificationData of qualificationsData) {
       try {
@@ -140,9 +141,14 @@ export async function POST(
           },
         });
         results.push(result);
-      } catch (error: any) {
+      } catch (error: unknown) {
         // Skip duplicates (unique constraint violation)
-        if (error.code === 'P2002') {
+        if (
+          error &&
+          typeof error === 'object' &&
+          'code' in error &&
+          error.code === 'P2002'
+        ) {
           continue;
         }
         throw error;
@@ -163,7 +169,7 @@ export async function POST(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );
@@ -236,7 +242,7 @@ export async function PUT(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );
@@ -287,7 +293,7 @@ export async function DELETE(
         {
           success: false,
           error: 'Validation failed',
-          details: error.errors,
+          details: error.issues,
         },
         { status: 400 }
       );
