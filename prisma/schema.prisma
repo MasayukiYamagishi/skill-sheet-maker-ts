@@ -203,13 +203,3 @@ model MbtiIdentity {
   @@map("mbti_identities")
 }
 
-model sqlx_migrations {
-  version        BigInt   @id
-  description    String
-  installed_on   DateTime @default(now()) @db.Timestamptz(6)
-  success        Boolean
-  checksum       Bytes
-  execution_time BigInt
-
-  @@map("_sqlx_migrations")
-}
