@@ -108,12 +108,7 @@ npm run clear:dummy-user-data-test  # テスト環境のダミーデータ削除
 
 ### 主要エンティティ
 
-- **User**: メインエンティティ（プロフィール、MBTI、雇用状況）
-- **Skill**: 技術スキルのマスターデータ（カテゴリ付き）
-- **UserSkill**: 多対多リレーション（習熟度レベル1-5）
-- **Qualification**: 職業資格
-- **MBTIResult**: 性格診断結果
-- **CareerHistory**: 職歴レコード
+./db/schema.sqlにドキュメントとしてスキーマの情報を残しています。
 
 ### 重要なリレーションシップ
 
