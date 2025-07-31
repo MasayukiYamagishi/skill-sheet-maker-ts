@@ -1,4 +1,3 @@
-import React from 'react';
 import { UserStatusConst } from '@/constants/constants';
 
 export type UserStatus = 'inProject' | 'available' | 'onLeave' | 'retired';
@@ -36,7 +35,7 @@ const sizeConfig = {
 export default function StatusBadge({ status, size = 'md' }: StatusBadgeProps) {
   const config = statusConfig[status];
   const sizeClass = sizeConfig[size];
-  
+
   return (
     <div className={`badge ${config.className} ${sizeClass} font-medium`}>
       {config.label}

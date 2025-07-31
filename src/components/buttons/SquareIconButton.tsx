@@ -1,7 +1,7 @@
-import { FC } from 'react';
 import classNames from 'classnames';
-import { IconKey } from '../icons/icons';
+import { FC } from 'react';
 import { Icon } from '../icons/Icon';
+import { IconKey } from '../icons/icons';
 
 type SquareIconButtonProps = {
   icon: IconKey;

@@ -61,7 +61,7 @@ export const COMMON_STYLES = {
   // カード
   card: 'card bg-base-100 shadow-lg hover:shadow-xl transition-shadow',
   cardBody: 'card-body p-6',
-  
+
   // ボタン
   btnPrimary: 'btn btn-primary',
   btnSecondary: 'btn btn-secondary',
@@ -71,19 +71,19 @@ export const COMMON_STYLES = {
   btnSm: 'btn-sm',
   btnMd: '',
   btnLg: 'btn-lg',
-  
+
   // フォーム
   formInput: 'input input-bordered w-full',
   formSelect: 'select select-bordered',
   formTextarea: 'textarea textarea-bordered',
   formLabel: 'label label-text font-medium',
-  
+
   // レスポンシブグリッド
   gridCols1: 'grid grid-cols-1',
   gridCols2: 'grid grid-cols-1 md:grid-cols-2',
   gridCols3: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
   gridCols4: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
-  
+
   // フレックス
   flexCenter: 'flex items-center justify-center',
   flexBetween: 'flex items-center justify-between',
@@ -91,7 +91,7 @@ export const COMMON_STYLES = {
   flexEnd: 'flex items-center justify-end',
   flexCol: 'flex flex-col',
   flexRow: 'flex flex-row',
-  
+
   // テキスト
   textHeadingH1: 'text-3xl font-bold text-neutral',
   textHeadingH2: 'text-2xl font-bold text-neutral',
@@ -102,11 +102,11 @@ export const COMMON_STYLES = {
   textSuccess: 'text-success',
   textWarning: 'text-warning',
   textInfo: 'text-info',
-  
+
   // 状態
   loading: 'loading loading-spinner loading-md',
   skeleton: 'skeleton',
-  
+
   // バッジ
   badgePrimary: 'badge badge-primary',
   badgeSecondary: 'badge badge-secondary',
@@ -118,29 +118,29 @@ export const COMMON_STYLES = {
   badgeMd: '',
   badgeLg: 'badge-lg',
   badgeOutline: 'badge-outline',
-  
+
   // アニメーション
   fadeIn: 'animate-fade-in',
   slideIn: 'animate-slide-in',
   bounce: 'animate-bounce',
   pulse: 'animate-pulse',
-  
+
   // レスポンシブ表示/非表示
   hiddenMobile: 'hidden md:block',
   hiddenDesktop: 'block md:hidden',
   hiddenTablet: 'hidden lg:block',
-  
+
   // ポジショニング
   absolute: 'absolute',
   relative: 'relative',
   fixed: 'fixed',
   sticky: 'sticky',
-  
+
   // オーバーフロー
   overflowHidden: 'overflow-hidden',
   overflowScroll: 'overflow-scroll',
   overflowAuto: 'overflow-auto',
-  
+
   // カーソル
   cursorPointer: 'cursor-pointer',
   cursorNotAllowed: 'cursor-not-allowed',
