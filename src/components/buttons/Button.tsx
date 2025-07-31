@@ -12,7 +12,14 @@ type ButtonProps = {
 };
 
 // ボタンをクリックしたときに発火するイベントをPropsで渡せるようにする。
-const Button: FC<ButtonProps> = ({ label, isWide, disabled, onClick, variant, isOutline }) => {
+const Button: FC<ButtonProps> = ({
+  label,
+  isWide,
+  disabled,
+  onClick,
+  variant,
+  isOutline,
+}) => {
   const buttonClassNames = classNames({
     btn: true,
     'btn-wide': isWide,
@@ -22,7 +29,12 @@ const Button: FC<ButtonProps> = ({ label, isWide, disabled, onClick, variant, is
   });
 
   return (
-    <button type="submit" className={buttonClassNames} onClick={onClick} disabled={disabled}>
+    <button
+      type='submit'
+      className={buttonClassNames}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {label}
     </button>
   );

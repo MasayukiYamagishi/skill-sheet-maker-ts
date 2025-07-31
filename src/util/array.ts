@@ -11,7 +11,7 @@
  */
 export function chunkArray<T>(array: readonly T[], size: number): T[][] {
   if (size < 1) {
-    throw new Error("chunkArray: size must be at least 1");
+    throw new Error('chunkArray: size must be at least 1');
   }
 
   const result: T[][] = [];

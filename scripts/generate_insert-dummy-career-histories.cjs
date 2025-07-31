@@ -8,14 +8,23 @@ const inputFile = path.join(
   'public',
   'reference',
   'dummy_user_data',
-  'dummy_career_histories.json',
+  'dummy_career_histories.json'
 );
-const outputFile = path.join(__dirname, '..', 'sql', 'insert_dummy_career_histories.sql');
+const outputFile = path.join(
+  __dirname,
+  '..',
+  'sql',
+  'insert_dummy_career_histories.sql'
+);
 
 // SQLの特殊文字をエスケープ
 function escapeSQL(str) {
   if (!str) return '';
-  return str.replace(/\\/g, '\\\\').replace(/'/g, "''").replace(/\n/g, '\\n').replace(/\r/g, '\\r');
+  return str
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "''")
+    .replace(/\n/g, '\\n')
+    .replace(/\r/g, '\\r');
 }
 
 // JSON読み込み

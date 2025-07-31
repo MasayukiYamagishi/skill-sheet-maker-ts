@@ -2,7 +2,13 @@ const fs = require('fs');
 const path = require('path');
 
 // ファイルパス設定
-const dir = path.join(__dirname, '..', 'public', 'reference', 'dummy_user_data');
+const dir = path.join(
+  __dirname,
+  '..',
+  'public',
+  'reference',
+  'dummy_user_data'
+);
 const input = path.join(dir, 'dummy_users.json');
 const output = path.join(__dirname, '..', 'sql', 'insert_dummy_users.sql');
 
@@ -46,7 +52,9 @@ for (const u of users) {
       esc(u.specialty),
       esc(u.tech_strength),
       esc(u.sales_comment),
-      u.toeic_score === null || u.toeic_score === undefined ? 'NULL' : Number(u.toeic_score),
+      u.toeic_score === null || u.toeic_score === undefined
+        ? 'NULL'
+        : Number(u.toeic_score),
       esc(u.other_skills),
     ].join(', ') +
     `) ON CONFLICT (id) DO NOTHING;\n`;

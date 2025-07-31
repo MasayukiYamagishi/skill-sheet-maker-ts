@@ -22,11 +22,16 @@ const IconButton: FC<IconButtonProps> = ({
 }) => {
   const btnClass = classNames(
     'btn btn-square btn-ghost',
-    className, // 追加のユーティリティ（例: "btn-primary"）
+    className // 追加のユーティリティ（例: "btn-primary"）
   );
 
   return (
-    <button type="button" onClick={onClick} disabled={disabled} className={btnClass}>
+    <button
+      type='button'
+      onClick={onClick}
+      disabled={disabled}
+      className={btnClass}
+    >
       <Icon icon={icon} size={iconSize} color={iconColor} />
     </button>
   );
