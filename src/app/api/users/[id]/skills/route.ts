@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
 // ユーザースキル操作用のスキーマ
@@ -12,7 +12,23 @@ const bulkUserSkillSchema = z.object({
   skills: z.array(userSkillSchema).min(1),
 });
 
-// GET /api/users/[id]/skills - 指定ユーザーIDのスキル一覧取得
+/**
+ * 指定ユーザーのスキル一覧を取得するAPI
+ *
+ * @description 指定されたユーザーIDのスキル情報を取得します。
+ * スキルのカテゴリ、タグ情報も同時に取得します。
+ *
+ * @param {NextRequest} request - Next.jsのリクエストオブジェクト
+ * @param {object} params - ルートパラメータ
+ * @param {string} params.id - スキルを取得したいユーザーのUUID
+ *
+ * @returns {Promise<NextResponse>} ユーザースキル一覧を含むJSON レスポンス
+ * @returns {boolean} returns.success - 処理の成功可否
+ * @returns {UserSkill[]} returns.data - ユーザースキル情報の配列
+ *
+ * @throws {404} 指定IDのユーザーが存在しない場合
+ * @throws {500} サーバー内部エラーの場合
+ */
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }

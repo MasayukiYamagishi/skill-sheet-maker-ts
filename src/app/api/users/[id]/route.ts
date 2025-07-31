@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
 // ユーザー更新用のバリデーションスキーマ
@@ -42,7 +42,34 @@ const updateUserSchema = z.object({
   otherSkills: z.string().optional(),
 });
 
-// GET /api/users/[id] - 指定IDのユーザー情報取得
+/**
+ * 指定IDのユーザー情報を取得するAPI
+ *
+ * @description 指定されたIDのユーザーの詳細情報を関連データと共に取得します。
+ * スキル、資格、MBTI情報、経歴情報も含めて返却します。
+ *
+ * @param {NextRequest} request - Next.jsのリクエストオブジェクト
+ * @param {object} params - ルートパラメータ
+ * @param {string} params.id - 取得したいユーザーのUUID
+ *
+ * @returns {Promise<NextResponse>} ユーザー情報を含むJSON レスポンス
+ * @returns {boolean} returns.success - 処理の成功可否
+ * @returns {User} returns.data - ユーザー情報
+ *
+ * @throws {404} 指定IDのユーザーが存在しない場合
+ * @throws {500} サーバー内部エラーの場合
+ *
+ * @example
+ * ```
+ * GET /api/users/123e4567-e89b-12d3-a456-426614174000
+ *
+ * Response:
+ * {
+ *   "success": true,
+ *   "data": { id: "123e4567-e89b-12d3-a456-426614174000", name: "田中太郎", ... }
+ * }
+ * ```
+ */
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -116,7 +143,33 @@ export async function GET(
   }
 }
 
-// PUT /api/users/[id] - 指定IDのユーザー情報更新
+/**
+ * 指定IDのユーザー情報を更新するAPI
+ *
+ * @description 指定されたIDのユーザー情報を更新します。
+ * ユーザー識別子とメールアドレスの重複チェックを実行します。
+ *
+ * @param {NextRequest} request - Next.jsのリクエストオブジェクト
+ * @param {object} params - ルートパラメータ
+ * @param {string} params.id - 更新したいユーザーのUUID
+ * @param {object} [request.body] - 更新データ（部分更新可能）
+ * @param {string} [request.body.userIdentifier] - ユーザー識別子
+ * @param {string} [request.body.name] - 氏名
+ * @param {string} [request.body.nameKana] - 氏名（カナ）
+ * @param {string} [request.body.birthDate] - 生年月日
+ * @param {string} [request.body.gender] - 性別
+ * @param {string} [request.body.email] - メールアドレス
+ * @param {string} [request.body.status] - ステータス
+ *
+ * @returns {Promise<NextResponse>} 更新されたユーザー情報を含むJSON レスポンス
+ * @returns {boolean} returns.success - 処理の成功可否
+ * @returns {User} returns.data - 更新されたユーザー情報
+ *
+ * @throws {400} バリデーションエラーの場合
+ * @throws {404} 指定IDのユーザーが存在しない場合
+ * @throws {409} ユーザー識別子またはメールアドレスが重複している場合
+ * @throws {500} サーバー内部エラーの場合
+ */
 export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -222,7 +275,23 @@ export async function PUT(
   }
 }
 
-// DELETE /api/users/[id] - 指定IDのユーザー削除
+/**
+ * 指定IDのユーザーを削除するAPI
+ *
+ * @description 指定されたIDのユーザーをシステムから完全に削除します。
+ * 関連するスキル、資格、経歴情報も同時に削除されます。
+ *
+ * @param {NextRequest} request - Next.jsのリクエストオブジェクト
+ * @param {object} params - ルートパラメータ
+ * @param {string} params.id - 削除したいユーザーのUUID
+ *
+ * @returns {Promise<NextResponse>} 削除結果を含むJSON レスポンス
+ * @returns {boolean} returns.success - 処理の成功可否
+ * @returns {string} returns.message - 削除完了メッセージ
+ *
+ * @throws {404} 指定IDのユーザーが存在しない場合
+ * @throws {500} サーバー内部エラーの場合
+ */
 export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }

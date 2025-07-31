@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
 // ユーザー作成・更新用のバリデーションスキーマ
@@ -39,7 +39,27 @@ const createUserSchema = z.object({
   otherSkills: z.string().optional(),
 });
 
-// GET /api/users - 全ユーザー情報取得
+/**
+ * 全ユーザー情報を取得するAPI
+ *
+ * @description 登録されている全ユーザーの詳細情報を関連データと共に取得します。
+ * スキル、資格、MBTI情報、経歴情報も含めて返却します。
+ *
+ * @returns {Promise<NextResponse>} ユーザー一覧を含むJSON レスポンス
+ * @returns {boolean} returns.success - 処理の成功可否
+ * @returns {User[]} returns.data - ユーザー情報の配列
+ *
+ * @example
+ * ```
+ * GET /api/users
+ *
+ * Response:
+ * {
+ *   "success": true,
+ *   "data": [{ id: "...", name: "...", ... }]
+ * }
+ * ```
+ */
 export async function GET() {
   try {
     // 全ユーザー情報を関連データと共に取得
@@ -97,7 +117,66 @@ export async function GET() {
   }
 }
 
-// POST /api/users - ユーザー新規登録
+/**
+ * ユーザー新規登録API
+ *
+ * @description 新しいユーザーを登録します。
+ * ユーザー識別子とメールアドレスの重複チェックを実行し、重複がある場合は409エラーを返します。
+ *
+ * @param {NextRequest} request - Next.jsのリクエストオブジェクト
+ * @param {object} request.body - リクエストボディ
+ * @param {string} request.body.userIdentifier - ユーザー識別子（必須）
+ * @param {string} request.body.name - 氏名（必須）
+ * @param {string} request.body.nameKana - 氏名（カナ）（必須）
+ * @param {string} request.body.birthDate - 生年月日（ISO日付形式）
+ * @param {string} request.body.gender - 性別（male/female/other）
+ * @param {string} request.body.email - メールアドレス（必須）
+ * @param {string} [request.body.mbtiType] - MBTIタイプ（任意）
+ * @param {string} [request.body.mbtiIdentity] - MBTI区分（任意）
+ * @param {string} [request.body.joinedAt] - 入社日（任意）
+ * @param {string} [request.body.retiredAt] - 退社日（任意）
+ * @param {string} [request.body.finalEducation] - 最終学歴（任意）
+ * @param {string} request.body.status - ステータス（inProject/available/onLeave/retired）
+ * @param {string} [request.body.affiliation] - 所属（任意）
+ * @param {string} [request.body.avatarPath] - アバター画像パス（任意）
+ * @param {string} [request.body.githubUrl] - GitHub URL（任意）
+ * @param {string} [request.body.prText] - PR文章（任意）
+ * @param {string} [request.body.specialty] - 専門分野（任意）
+ * @param {string} [request.body.techStrength] - 技術的強み（任意）
+ * @param {string} [request.body.salesComment] - 営業コメント（任意）
+ * @param {number} [request.body.toeicScore] - TOEICスコア（0-990、任意）
+ * @param {string} [request.body.otherSkills] - その他スキル（任意）
+ *
+ * @returns {Promise<NextResponse>} 登録されたユーザー情報を含むJSON レスポンス
+ * @returns {boolean} returns.success - 処理の成功可否
+ * @returns {User} returns.data - 登録されたユーザー情報
+ *
+ * @throws {400} バリデーションエラーの場合
+ * @throws {409} ユーザー識別子またはメールアドレスが重複している場合
+ * @throws {500} サーバー内部エラーの場合
+ *
+ * @example
+ * ```
+ * POST /api/users
+ * Content-Type: application/json
+ *
+ * {
+ *   "userIdentifier": "user001",
+ *   "name": "田中太郎",
+ *   "nameKana": "タナカタロウ",
+ *   "birthDate": "1990-01-01",
+ *   "gender": "male",
+ *   "email": "tanaka@example.com",
+ *   "status": "available"
+ * }
+ *
+ * Response:
+ * {
+ *   "success": true,
+ *   "data": { id: "...", name: "田中太郎", ... }
+ * }
+ * ```
+ */
 export async function POST(request: NextRequest) {
   try {
     // リクエストボディを取得してバリデーション実行
