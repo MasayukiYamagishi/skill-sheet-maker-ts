@@ -1,129 +1,131 @@
 # Skill Sheet Maker
 
-A modern web application for creating and managing skill sheets, built with Next.js, TypeScript, and Prisma.
+スキルシートの作成と管理のためのアプリケーションです。
+Next.js, TypeScript, Prismaを使って構築されています。
+技術スタックはVercelに乗せることを想定して作られています。
 
 ## Overview
 
-This project is a migration from a Rust+Tauri desktop application to a Next.js web application optimized for deployment on Vercel. It enables users to create, manage, and export professional skill sheets with features including:
+もともとRust + Tauriのデスクトップアプリケーションとして作っていたものを、Vercelにデプロイして動かすことを目指して移行したプロジェクトです。
 
-- User profile management
-- Skill and qualification tracking
-- MBTI personality assessment results
-- Career history management
-- PDF export functionality (planned)
+このアプリでは、エンジニア人材の登録・管理・スキルシートのPDF出力などを機能として含みます。
+
+特徴的な機能：
+
+- ユーザの管理
+- 保有しているスキルと資格の情報の管理
+- MBTI性格診断の結果の保持
+- 業務経歴情報の保持
+- スキルシートおよびサマリのPDF出力
 
 ## Tech Stack
 
-- **Framework**: Next.js 15 with App Router
-- **Language**: TypeScript
-- **Database**: PostgreSQL with Prisma ORM
-- **Styling**: Tailwind CSS + daisyUI
-- **Deployment**: Vercel
-- **Architecture**: Bulletproof-React structure
+- **フレームワーク**: Next.js 15, App Router
+- **言語**: TypeScript
+- **データベース**: PostgreSQL, Prisma ORM
+- **スタイリング**: Tailwind CSS + daisyUI
+- **デプロイ**: Vercel
+- **アーキテクチャ**: Bulletproof-React
 
-## Getting Started
+## 開発の始め方
 
-### Prerequisites
+### 必須要件
 
-- Node.js 18+ 
+- Node.js 18+
 - PostgreSQL database
 - Git
 
-### Installation
+### 環境構築
 
-1. Clone the repository:
+1. リポジトリのクローン:
+
 ```bash
 git clone <repository-url>
 cd skill-sheet-maker-ts
 ```
 
-2. Install dependencies:
+2. 依存関係のインストール:
+
 ```bash
 npm install
 ```
 
-3. Set up environment variables:
+3. 環境変数のセットアップ:
+
 ```bash
 cp .env.example .env
 ```
-Edit `.env` and fill in your database connection string and other configuration.
 
-4. Set up the database:
+`.env`を編集し、データベース接続文字列とその他の設定を記入する。
+
+4. データベースのセットアップ:
+
 ```bash
 npm run db:generate
 npm run db:migrate
 ```
 
-5. Start the development server:
+5. 開発サーバのスタート:
+
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000) を開くことで実行結果を閲覧できます。
 
-## Available Scripts
+## スクリプト
 
-- `npm run dev` - Start the development server with Turbopack
-- `npm run build` - Build the application for production
-- `npm run start` - Start the production server
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Run ESLint with auto-fix
-- `npm run format` - Format code with Prettier
-- `npm run type-check` - Run TypeScript type checking
-- `npm run db:generate` - Generate Prisma client
-- `npm run db:migrate` - Run database migrations
-- `npm run db:studio` - Open Prisma Studio
+- `npm run dev` - Turbopackで開発サーバを起動
+- `npm run build` - 本番向けにビルド
+- `npm run start` - 本番向けサーバの起動
+- `npm run lint` - ESLintの実行
+- `npm run lint:fix` - ESLintによるauto-fixの実行
+- `npm run format` - Prettierによるコードのフォーマット
+- `npm run type-check` - TypeScriptの型チェック実行
+- `npm run db:generate` - Prisma clientの生成
+- `npm run db:migrate` - database migrationsの実行
+- `npm run db:studio` - Prisma Studioを開く
 - `npm run db:seed` - Seed the database
 
-## Project Structure
+## プロジェクト構成
 
-```
+```txt
 src/
-├── app/                 # Next.js App Router pages and API routes
-├── features/            # Feature-based modules (Bulletproof-React)
-│   ├── users/           # User management
-│   ├── skills/          # Skill management  
-│   └── auth/            # Authentication
-├── lib/                 # Shared utilities and configurations
-├── components/          # Shared UI components
-├── providers/           # Application providers
-└── types/               # TypeScript type definitions
+├── app/                 # Next.js App Router のページと API ルート
+├── features/            # 機能単位のモジュール（Bulletproof-React 方式）
+│   ├── users/           # ユーザー管理
+│   ├── skills/          # スキル管理
+│   └── auth/            # 認証
+├── lib/                 # 共有ユーティリティと設定
+├── components/          # 共有 UI コンポーネント
+├── providers/           # アプリケーションプロバイダー
+└── types/               # TypeScript の型定義
 
 prisma/
-└── schema.prisma        # Database schema
+└── schema.prisma        # データベーススキーマ
 ```
 
-## Database Schema
+## データベーススキーマ
 
-The application uses PostgreSQL with the following main entities:
-- Users
-- Skills and UserSkills (many-to-many)
-- Qualifications
-- MBTI Results
-- Career History
+本アプリケーションは PostgreSQL を使用し、主なエンティティは以下のとおりです。
 
-## Deployment
+- Users（ユーザー）
+- Skills と UserSkills（多対多）
+- Qualifications（資格）
+- MBTI Results（MBTI 結果）
+- Career History（経歴）
 
-This application is optimized for deployment on Vercel:
+## デプロイ
 
-1. Connect your GitHub repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+このアプリは Vercel でのデプロイに最適化されています。
 
-For database, consider using:
+1. GitHub リポジトリを Vercel に接続する
+2. Vercel のダッシュボードで環境変数を設定する
+3. `main` ブランチへの push で自動デプロイ
+
+データベースには次のいずれかを検討してください。
+
 - Vercel Postgres
 - Neon
 - PlanetScale
-- Any PostgreSQL provider
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
-
-## License
-
-This project is private and proprietary.
+- その他の PostgreSQL プロバイダー
