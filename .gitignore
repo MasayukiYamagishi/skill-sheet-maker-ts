@@ -70,3 +70,5 @@ public/docs
 # Claude
 .claude/
 skill-sheet-maker バックエンド移行計画（Rust+Tauri → Edge対応TypeScript）.pdf
+
+docs/

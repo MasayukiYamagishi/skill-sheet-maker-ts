@@ -108,12 +108,7 @@ npm run clear:dummy-user-data-test  # テスト環境のダミーデータ削除
 
 ### 主要エンティティ
 
-- **User**: メインエンティティ（プロフィール、MBTI、雇用状況）
-- **Skill**: 技術スキルのマスターデータ（カテゴリ付き）
-- **UserSkill**: 多対多リレーション（習熟度レベル1-5）
-- **Qualification**: 職業資格
-- **MBTIResult**: 性格診断結果
-- **CareerHistory**: 職歴レコード
+./db/schema.sqlにドキュメントとしてスキーマの情報を残しています。
 
 ### 重要なリレーションシップ
 
@@ -293,3 +288,8 @@ Rust+Tauri → TypeScript移行のため：
     - fetch_mbti_detail_by_type：指定したcodeのMBTIタイプの詳細情報を取得する。（単一）
   - mbti_identitiesテーブル：MBTIのA/T型区分の情報をまとめたテーブル。一覧/参照 APIが必要。
     - fetch_mbti_identity_by_code：指定したAまたはTのコードから、性格区分の詳細情報を取得する。（単一）
+
+## ドキュメントの配置場所
+
+実装の計画や進捗状況などを整理してまとめるドキュメントは、プロジェクトディレクトリ配下の`docs`というディレクトリの中に作成すること。
+`docs`がない場合は新規作成してそこに保存し、既にdocsというディレクトリがある場合はそれをそのまま利用すること。

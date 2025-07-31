@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Image from 'next/image';
 
 type CirclePhotoCardProps = {
   src?: string;
@@ -17,10 +18,12 @@ const CirclePhotoCard: FC<CirclePhotoCardProps> = ({
         className='aspect-square overflow-hidden rounded-full bg-neutral-700'
         style={{ width: `${size}px`, height: `${size}px` }}
       >
-        <img
+        <Image
           className='object-cover w-full h-full'
           src={src || '/img/avatar_img.png'}
-          alt={altText}
+          alt={altText || 'Avatar'}
+          width={size}
+          height={size}
         />
       </div>
     </div>
