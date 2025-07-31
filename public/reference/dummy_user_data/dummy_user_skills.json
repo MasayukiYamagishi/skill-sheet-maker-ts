@@ -19,7 +19,11 @@
     "skill_id": "skill_postgresql",
     "version": "15"
   },
-  { "user_id": "08250bb6-60a3-4e65-b0e6-dff9971c15f1", "skill_id": "skill_docker", "version": "" },
+  {
+    "user_id": "08250bb6-60a3-4e65-b0e6-dff9971c15f1",
+    "skill_id": "skill_docker",
+    "version": ""
+  },
   {
     "user_id": "08250bb6-60a3-4e65-b0e6-dff9971c15f1",
     "skill_id": "skill_kubernetes",
@@ -30,7 +34,11 @@
     "skill_id": "skill_googlecloud",
     "version": ""
   },
-  { "user_id": "bc6e88c8-0e0d-4c65-b3d6-7ee10cde6750", "skill_id": "skill_aws", "version": "" },
+  {
+    "user_id": "bc6e88c8-0e0d-4c65-b3d6-7ee10cde6750",
+    "skill_id": "skill_aws",
+    "version": ""
+  },
   {
     "user_id": "bc6e88c8-0e0d-4c65-b3d6-7ee10cde6750",
     "skill_id": "skill_terraform",
@@ -41,6 +49,14 @@
     "skill_id": "skill_circleci",
     "version": ""
   },
-  { "user_id": "bc6e88c8-0e0d-4c65-b3d6-7ee10cde6750", "skill_id": "skill_bert", "version": "" },
-  { "user_id": "bc6e88c8-0e0d-4c65-b3d6-7ee10cde6750", "skill_id": "skill_linux", "version": "" }
+  {
+    "user_id": "bc6e88c8-0e0d-4c65-b3d6-7ee10cde6750",
+    "skill_id": "skill_bert",
+    "version": ""
+  },
+  {
+    "user_id": "bc6e88c8-0e0d-4c65-b3d6-7ee10cde6750",
+    "skill_id": "skill_linux",
+    "version": ""
+  }
 ]

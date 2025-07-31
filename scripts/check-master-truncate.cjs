@@ -24,7 +24,9 @@ function tableExistsSQL(tbl) {
 for (const db of dbs) {
   for (const table of tables) {
     try {
-      const result = execSync(`psql -U ${user} -d ${db} -t -c "${tableExistsSQL(table)}"`)
+      const result = execSync(
+        `psql -U ${user} -d ${db} -t -c "${tableExistsSQL(table)}"`
+      )
         .toString()
         .trim();
       if (result !== 't') {
@@ -37,7 +39,9 @@ for (const db of dbs) {
   }
   // TRUNCATE
   try {
-    execSync(`psql -U ${user} -d ${db} -f ./sql/truncate_masters.sql`, { stdio: 'inherit' });
+    execSync(`psql -U ${user} -d ${db} -f ./sql/truncate_masters.sql`, {
+      stdio: 'inherit',
+    });
   } catch (e) {
     console.error(`[${db}]のTRUNCATEに失敗しました:`, e.message);
     process.exit(1);

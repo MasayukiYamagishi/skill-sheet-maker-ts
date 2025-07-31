@@ -28,18 +28,22 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <dialog
       ref={modalRef}
-      className="modal modal-bottom sm:modal-middle backdrop-blur-sm"
+      className='modal modal-bottom sm:modal-middle backdrop-blur-sm'
       onCancel={handleClose}
     >
-      <div className="modal-box">
+      <div className='modal-box'>
         {/* Close button */}
-        <form method="dialog">
-          <IconButton icon="close" onClick={handleClose} className="absolute right-2 top-2" />
+        <form method='dialog'>
+          <IconButton
+            icon='close'
+            onClick={handleClose}
+            className='absolute right-2 top-2'
+          />
         </form>
         {children}
       </div>
       {/* Click outside to close */}
-      <form method="dialog" className="modal-backdrop">
+      <form method='dialog' className='modal-backdrop'>
         <button onClick={handleClose}>close</button>
       </form>
     </dialog>

@@ -24,12 +24,19 @@ const IconLabelButton: FC<IconLabelButtonProps> = ({
   className,
   disabled = false,
 }) => {
-  const btnClass = classNames('btn', 'flex', 'items-center', 'justify-center', 'gap-2', className);
+  const btnClass = classNames(
+    'btn',
+    'flex',
+    'items-center',
+    'justify-center',
+    'gap-2',
+    className
+  );
   const btnStyle = btnWidth ? { width: `${btnWidth}px` } : undefined;
 
   return (
     <button
-      type="button"
+      type='button'
       onClick={onClick}
       disabled={disabled}
       className={btnClass}

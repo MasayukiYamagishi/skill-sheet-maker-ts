@@ -18,12 +18,16 @@ const ToggleButton: FC<ToggleButtonProps> = ({
   className,
   disabled = false,
 }) => {
-  const btnClass = classNames('btn', toggled ? 'btn-active' : 'btn-outline', className);
+  const btnClass = classNames(
+    'btn',
+    toggled ? 'btn-active' : 'btn-outline',
+    className
+  );
   const btnStyle = btnWidth ? { width: `${btnWidth}px` } : undefined;
 
   return (
     <button
-      type="button"
+      type='button'
       onClick={() => !disabled && onToggle(!toggled)}
       disabled={disabled}
       className={btnClass}

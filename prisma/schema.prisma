@@ -10,85 +10,286 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ========================
+// users（ユーザ情報）
+// ========================
 model User {
-  id           String   @id @default(cuid())
-  name         String
-  email        String   @unique
-  profileImage String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id              String    @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime  @updatedAt @map("updated_at") @db.Timestamptz
+  userIdentifier  String    @unique @map("user_identifier")
+  name            String
+  nameKana        String    @map("name_kana")
+  birthDate       DateTime  @map("birth_date") @db.Date
+  gender          Gender
+  email           String    @unique
+  mbtiType        String?   @map("mbti_type")
+  mbtiIdentity    String?   @map("mbti_identity")
+  joinedAt        DateTime? @map("joined_at") @db.Date
+  retiredAt       DateTime? @map("retired_at") @db.Date
+  finalEducation  String?   @map("final_education")
+  status          UserStatus
+  affiliation     String?
+  avatarPath      String?   @map("avatar_path")
+  githubUrl       String?   @map("github_url")
+  prText          String?   @map("pr_text")
+  specialty       String?
+  techStrength    String?   @map("tech_strength")
+  salesComment    String?   @map("sales_comment")
+  toeicScore      Int?      @map("toeic_score")
+  otherSkills     String?   @map("other_skills")
 
   // Relations
-  mbtiResults    MBTIResult[]
-  careerHistory  CareerHistory[]
-  userSkills     UserSkill[]
+  mbtiTypeRef         MbtiType?         @relation(fields: [mbtiType], references: [code])
+  mbtiIdentityRef     MbtiIdentity?     @relation(fields: [mbtiIdentity], references: [code])
+  userQualifications  UserQualification[]
+  userSkills          UserSkill[]
+  careerHistories     CareerHistory[]
 
   @@map("users")
 }
 
-model Skill {
-  id          String   @id @default(cuid())
-  name        String   @unique
-  category    String
+enum Gender {
+  male
+  female
+  other
+}
+
+enum UserStatus {
+  inProject
+  available
+  onLeave
+  retired
+}
+
+// ========================
+// qualifications（資格マスタ）
+// ========================
+model Qualification {
+  id          String  @id
+  name        String  @unique
   description String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  isNational  Boolean @default(false) @map("is_national")
 
   // Relations
-  userSkills UserSkill[]
-
-  @@map("skills")
-}
-
-model UserSkill {
-  id     String @id @default(cuid())
-  userId String
-  skillId String
-  level  Int    @default(1) // 1-5 skill level
-  
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  skill  Skill  @relation(fields: [skillId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, skillId])
-  @@map("user_skills")
-}
-
-model Qualification {
-  id           String   @id @default(cuid())
-  name         String
-  organization String
-  obtainedAt   DateTime
-  description  String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  userQualifications UserQualification[]
 
   @@map("qualifications")
 }
 
-model MBTIResult {
-  id          String   @id @default(cuid())
-  userId      String
-  type        String   // e.g., "INTJ", "ENFP"
-  description String?
-  createdAt   DateTime @default(now())
+// ========================
+// user_qualifications（ユーザごとの資格）
+// ========================
+model UserQualification {
+  userId          String    @map("user_id") @db.Uuid
+  qualificationId String    @map("qualification_id")
+  acquiredAt      DateTime? @map("acquired_at") @db.Date
+  createdAt       DateTime  @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime  @updatedAt @map("updated_at") @db.Timestamptz
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // Relations
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  qualification Qualification @relation(fields: [qualificationId], references: [id])
 
-  @@map("mbti_results")
+  @@id([userId, qualificationId])
+  @@map("user_qualifications")
 }
 
-model CareerHistory {
-  id          String    @id @default(cuid())
-  userId      String
-  company     String
-  position    String
-  startDate   DateTime
-  endDate     DateTime?
+// ========================
+// skill_categories（スキルカテゴリマスタ）
+// ========================
+model SkillCategory {
+  id          String  @id
+  label       String
   description String?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // Relations
+  skills Skill[]
 
-  @@map("career_history")
+  @@map("skill_categories")
+}
+
+// ========================
+// skill_tags（スキルタグマスタ）
+// ========================
+model SkillTag {
+  id          String  @id
+  label       String
+  description String?
+
+  // Relations
+  skillTagMaps SkillTagMap[]
+
+  @@map("skill_tags")
+}
+
+// ========================
+// skills（スキルマスタ）
+// ========================
+model Skill {
+  id          String  @id
+  label       String
+  description String?
+  deviconId   String? @map("devicon_id")
+  categoryId  String  @map("category_id")
+
+  // Relations
+  category       SkillCategory @relation(fields: [categoryId], references: [id])
+  skillTagMaps   SkillTagMap[]
+  userSkills     UserSkill[]
+  careerSkills   CareerSkill[]
+
+  @@map("skills")
+}
+
+// ========================
+// skill_tag_map（スキルタグ付け多対多）
+// ========================
+model SkillTagMap {
+  skillId String @map("skill_id")
+  tagId   String @map("tag_id")
+
+  // Relations
+  skill Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  tag   SkillTag @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([skillId, tagId])
+  @@map("skill_tag_map")
+}
+
+// ========================
+// user_skills（ユーザごとのスキル）
+// ========================
+model UserSkill {
+  userId    String   @map("user_id") @db.Uuid
+  skillId   String   @map("skill_id")
+  version   String?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill Skill @relation(fields: [skillId], references: [id])
+
+  @@id([userId, skillId])
+  @@map("user_skills")
+}
+
+// ========================
+// career_histories（経歴）
+// ========================
+model CareerHistory {
+  id          String    @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  userId      String    @map("user_id") @db.Uuid
+  title       String
+  startedAt   DateTime? @map("started_at") @db.Date
+  endedAt     DateTime? @map("ended_at") @db.Date
+  description String?
+  role        String?
+  scale       String?
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt   DateTime  @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  careerSkills    CareerSkill[]
+  careerProcesses CareerProcess[]
+
+  @@map("career_histories")
+}
+
+// ========================
+// career_skills（経歴ごとのスキル/技術）
+// ========================
+model CareerSkill {
+  careerId  String   @map("career_id") @db.Uuid
+  skillId   String   @map("skill_id")
+  version   String?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  career CareerHistory @relation(fields: [careerId], references: [id], onDelete: Cascade)
+  skill  Skill         @relation(fields: [skillId], references: [id])
+
+  @@id([careerId, skillId])
+  @@map("career_skills")
+}
+
+// ========================
+// master_processes（担当工程マスタ）
+// ========================
+model MasterProcess {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+
+  // Relations
+  careerProcesses CareerProcess[]
+
+  @@map("master_processes")
+}
+
+// ========================
+// career_processes（経歴ごとの担当工程）
+// ========================
+model CareerProcess {
+  careerId  String   @map("career_id") @db.Uuid
+  processId Int      @map("process_id")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz
+
+  // Relations
+  career  CareerHistory  @relation(fields: [careerId], references: [id], onDelete: Cascade)
+  process MasterProcess  @relation(fields: [processId], references: [id])
+
+  @@id([careerId, processId])
+  @@map("career_processes")
+}
+
+// ========================
+// mbti_groups（MBTIの大分類カテゴリマスタ）
+// ========================
+model MbtiGroup {
+  id          String  @id
+  label       String
+  description String  @default("")
+
+  // Relations
+  mbtiTypes MbtiType[]
+
+  @@map("mbti_groups")
+}
+
+// ========================
+// mbti_types（MBTI16タイプマスタ）
+// ========================
+model MbtiType {
+  code             String   @id
+  groupId          String   @map("group_id")
+  name             String
+  nameEn           String?  @map("name_en")
+  positiveKeywords String[] @default([]) @map("positive_keywords")
+  negativeKeywords String[] @default([]) @map("negative_keywords")
+  description      String
+  features         String[] @default([])
+
+  // Relations
+  group MbtiGroup @relation(fields: [groupId], references: [id])
+  users User[]
+
+  @@map("mbti_types")
+}
+
+// ========================
+// mbti_identities（MBTI A/T型区分マスタ）
+// ========================
+model MbtiIdentity {
+  code        String @id
+  label       String
+  description String @default("")
+
+  // Relations
+  users User[]
+
+  @@map("mbti_identities")
 }

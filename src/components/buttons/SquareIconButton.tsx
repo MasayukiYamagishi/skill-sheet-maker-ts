@@ -23,11 +23,16 @@ const SquareIconButton: FC<SquareIconButtonProps> = ({
   const btnClass = classNames(
     'btn',
     'btn-square',
-    className, // 追加のユーティリティ（例: "btn-primary"）
+    className // 追加のユーティリティ（例: "btn-primary"）
   );
 
   return (
-    <button type="button" className={btnClass} onClick={onClick} disabled={disabled}>
+    <button
+      type='button'
+      className={btnClass}
+      onClick={onClick}
+      disabled={disabled}
+    >
       <Icon icon={icon} size={iconSize} color={iconColor} />
     </button>
   );

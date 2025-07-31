@@ -8,17 +8,26 @@ const inputPath = path.join(
   'public',
   'reference',
   'qualifications',
-  'qualifications.json',
+  'qualifications.json'
 );
 // 出力先
-const outputPath = path.join(__dirname, '..', 'sql', 'insert_qualifications.sql');
+const outputPath = path.join(
+  __dirname,
+  '..',
+  'sql',
+  'insert_qualifications.sql'
+);
 
 // JSON読み込み
 const qualifications = JSON.parse(fs.readFileSync(inputPath, 'utf-8'));
 
 function escapeSQL(str) {
   if (str === undefined || str === null) return '';
-  return str.replace(/\\/g, '\\\\').replace(/'/g, "''").replace(/\n/g, '\\n').replace(/\r/g, '\\r');
+  return str
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "''")
+    .replace(/\n/g, '\\n')
+    .replace(/\r/g, '\\r');
 }
 
 let sql = `\\encoding UTF8;

@@ -7,12 +7,23 @@ type DeviconIconProps = {
   className?: string;
 };
 
-const DeviconIcon: FC<DeviconIconProps> = ({ name, fontSize = 16, className }) => {
-  const deviconClassName = classNames('devicon-' + name + '-original', 'colored', className);
+const DeviconIcon: FC<DeviconIconProps> = ({
+  name,
+  fontSize = 16,
+  className,
+}) => {
+  const deviconClassName = classNames(
+    'devicon-' + name + '-original',
+    'colored',
+    className
+  );
 
   return (
     <div>
-      <i className={deviconClassName} style={{ fontSize: fontSize, verticalAlign: 'middle' }}></i>
+      <i
+        className={deviconClassName}
+        style={{ fontSize: fontSize, verticalAlign: 'middle' }}
+      ></i>
     </div>
   );
 };

@@ -8,9 +8,14 @@ const inputPath = path.join(
   'public',
   'reference',
   'dummy_user_data',
-  'dummy_career_skills.json',
+  'dummy_career_skills.json'
 );
-const outputPath = path.join(__dirname, '..', 'sql', 'insert_dummy_career_skills.sql');
+const outputPath = path.join(
+  __dirname,
+  '..',
+  'sql',
+  'insert_dummy_career_skills.sql'
+);
 
 // JSON読み込み
 const data = JSON.parse(fs.readFileSync(inputPath, 'utf-8'));

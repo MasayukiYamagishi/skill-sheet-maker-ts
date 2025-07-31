@@ -2,7 +2,10 @@
  * "yyyy-mm-dd" などを受け取り、日本時間での年齢を
  * 「XX歳mmヵ月」の形式で返す。
  */
-export function calcAgeJSTLabel(birthDate: string | Date, now: Date = new Date()): string {
+export function calcAgeJSTLabel(
+  birthDate: string | Date,
+  now: Date = new Date()
+): string {
   const { years, months } = calcAgeJST(birthDate, now);
   return `${years}歳${months}ヵ月`;
 }
@@ -12,7 +15,7 @@ export function calcAgeJSTLabel(birthDate: string | Date, now: Date = new Date()
  */
 export function calcAgeJST(
   birthDate: string | Date,
-  now: Date = new Date(),
+  now: Date = new Date()
 ): { years: number; months: number } {
   const birth = toDate(birthDate);
 
@@ -53,7 +56,10 @@ function toDate(d: string | Date): Date {
 }
 
 /** 指定タイムゾーン（ここでは JST）での年月日を安全に取得 */
-function getYmdInTz(date: Date, timeZone: string): { year: number; month: number; day: number } {
+function getYmdInTz(
+  date: Date,
+  timeZone: string
+): { year: number; month: number; day: number } {
   const parts = new Intl.DateTimeFormat('ja-JP', {
     timeZone,
     year: 'numeric',

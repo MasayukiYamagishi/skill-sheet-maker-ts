@@ -17,7 +17,7 @@ export const Icon: FC<IconProps> = ({ icon, size = 16, color, className }) => {
   }
 
   return (
-    <span className="flex items-center content-center">
+    <span className='flex items-center content-center'>
       <IconComponent size={size} color={color} className={className} />
     </span>
   );

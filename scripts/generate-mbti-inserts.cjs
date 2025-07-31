@@ -2,9 +2,18 @@ const fs = require('fs');
 const path = require('path');
 
 // ファイルパス
-const groupPath = path.resolve(__dirname, '../public/reference/mbti/mbti_group.json');
-const identitiesPath = path.resolve(__dirname, '../public/reference/mbti/mbti_identities.json');
-const typesPath = path.resolve(__dirname, '../public/reference/mbti/mbti_types.json');
+const groupPath = path.resolve(
+  __dirname,
+  '../public/reference/mbti/mbti_group.json'
+);
+const identitiesPath = path.resolve(
+  __dirname,
+  '../public/reference/mbti/mbti_identities.json'
+);
+const typesPath = path.resolve(
+  __dirname,
+  '../public/reference/mbti/mbti_types.json'
+);
 const outputPath = path.resolve(__dirname, '../sql/insert_mbti.sql');
 
 // 配列をPostgreSQLのTEXT[]形式に変換
