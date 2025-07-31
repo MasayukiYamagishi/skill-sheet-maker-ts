@@ -1,0 +1,95 @@
+name: Code Quality Check
+
+# プルリクエスト時により詳細なコード品質チェックを実行
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  code-quality-check:
+    name: Comprehensive Code Quality Check
+    runs-on: ubuntu-latest
+
+    steps:
+    # リポジトリのコードをチェックアウト
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Node.jsのセットアップ
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+
+    # 依存関係のインストール
+    - name: Install dependencies
+      run: npm ci
+
+    # Prismaクライアントの生成
+    - name: Generate Prisma Client
+      run: npm run db:generate
+
+    # ESLintによる詳細なコード品質チェック
+    - name: Run ESLint with detailed output
+      run: |
+        echo "🔍 Running ESLint..."
+        npm run lint -- --format=compact
+
+    # TypeScriptの厳密な型チェック
+    - name: Run TypeScript strict type check
+      run: |
+        echo "🔍 Running TypeScript type check..."
+        npm run type-check
+
+    # Prettierによるコードフォーマットチェック
+    - name: Check code formatting with Prettier
+      run: |
+        echo "🔍 Checking code formatting..."
+        npm run format -- --check || {
+          echo "❌ Code formatting issues found!"
+          echo "Run 'npm run format' to fix formatting issues."
+          exit 1
+        }
+
+    # Next.jsビルドチェック（本番環境想定）
+    - name: Build for production
+      run: |
+        echo "🏗️ Building for production..."
+        npm run build
+
+    # ビルド成果物のサイズ確認
+    - name: Check build output size
+      run: |
+        echo "📊 Build output analysis:"
+        ls -la .next/static/chunks/ || echo "Static chunks directory not found"
+        du -sh .next/ || echo "Next.js build directory not found"
+
+    # 成功時の総合レポート
+    - name: Quality check success report
+      if: success()
+      run: |
+        echo "✅ All code quality checks passed!"
+        echo ""
+        echo "📋 Completed checks:"
+        echo "  • ESLint: Code quality ✅"
+        echo "  • TypeScript: Type safety ✅"
+        echo "  • Prettier: Code formatting ✅"
+        echo "  • Next.js: Production build ✅"
+        echo "  • Build size: Output analysis ✅"
+        echo ""
+        echo "🎉 Ready for merge!"
+
+    # 失敗時の詳細レポート
+    - name: Quality check failure report
+      if: failure()
+      run: |
+        echo "❌ Code quality checks failed!"
+        echo ""
+        echo "Please fix the issues above before merging."
+        echo "Common fixes:"
+        echo "  • Run 'npm run lint:fix' for ESLint issues"
+        echo "  • Run 'npm run format' for Prettier formatting"
+        echo "  • Check TypeScript errors with 'npm run type-check'"
+        echo "  • Test build locally with 'npm run build'"
+        exit 1
