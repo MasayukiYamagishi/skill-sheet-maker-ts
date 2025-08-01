@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 // モックデータ
 const mockSkills = [
@@ -15,7 +15,7 @@ const mockSkills = [
   { id: 7, name: 'MySQL', category: 'database' },
   { id: 8, name: 'PostgreSQL', category: 'database' },
   { id: 9, name: 'AWS', category: 'cloud' },
-  { id: 10, name: 'Docker', category: 'infrastructure' }
+  { id: 10, name: 'Docker', category: 'infrastructure' },
 ];
 
 const mockQualifications = [
@@ -23,7 +23,7 @@ const mockQualifications = [
   { id: 2, name: '応用情報技術者試験' },
   { id: 3, name: 'AWS Solutions Architect' },
   { id: 4, name: 'Oracle Master' },
-  { id: 5, name: 'LPIC-1' }
+  { id: 5, name: 'LPIC-1' },
 ];
 
 const mockProcesses = [
@@ -33,10 +33,14 @@ const mockProcesses = [
   { id: 4, name: '実装' },
   { id: 5, name: 'テスト' },
   { id: 6, name: 'リリース' },
-  { id: 7, name: '保守運用' }
+  { id: 7, name: '保守運用' },
 ];
 
-export default function EngineerEditPage({ params }: { params: { id: string } }) {
+export default function EngineerEditPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const [activeTab, setActiveTab] = useState('basic');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -51,26 +55,26 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
     gender: 'male',
     phone: '090-1234-5678',
     address: '東京都渋谷区',
-    
+
     // 職務情報
     status: 'available',
     department: '開発部',
     joinDate: '2020-04-01',
     toeicScore: 750,
-    
+
     // スキル情報
     userSkills: [
       { skillId: 1, level: 3, experienceYears: 5 },
       { skillId: 3, level: 4, experienceYears: 3 },
-      { skillId: 9, level: 2, experienceYears: 2 }
+      { skillId: 9, level: 2, experienceYears: 2 },
     ],
-    
+
     // 資格情報
     userQualifications: [
       { qualificationId: 1, obtainedDate: '2021-06-15' },
-      { qualificationId: 3, obtainedDate: '2022-03-20' }
+      { qualificationId: 3, obtainedDate: '2022-03-20' },
     ],
-    
+
     // 経歴情報
     careerHistories: [
       {
@@ -81,21 +85,21 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
         endDate: '',
         description: 'Webアプリケーション開発',
         processes: [1, 2, 4, 5],
-        skills: [1, 3, 7]
-      }
-    ]
+        skills: [1, 3, 7],
+      },
+    ],
   });
 
   const handleInputChange = (field: string, value: any) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
   };
 
   const handleSave = async () => {
     setIsLoading(true);
-    
+
     // ここで実際の保存処理を行う
     setTimeout(() => {
       setIsLoading(false);
@@ -104,172 +108,186 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
   };
 
   const renderBasicInfoTab = () => (
-    <div className="space-y-6">
-      <h3 className="text-lg font-semibold">基本情報</h3>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className='space-y-6'>
+      <h3 className='text-lg font-semibold'>基本情報</h3>
+
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {/* 名前 */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">氏名 <span className="text-error">*</span></span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>
+              氏名 <span className='text-error'>*</span>
+            </span>
           </label>
           <input
-            type="text"
-            className="form-input"
+            type='text'
+            className='form-input'
             value={formData.name}
             onChange={(e) => handleInputChange('name', e.target.value)}
             required
           />
         </div>
-        
+
         {/* フリガナ */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">フリガナ <span className="text-error">*</span></span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>
+              フリガナ <span className='text-error'>*</span>
+            </span>
           </label>
           <input
-            type="text"
-            className="form-input"
+            type='text'
+            className='form-input'
             value={formData.nameKana}
             onChange={(e) => handleInputChange('nameKana', e.target.value)}
             required
           />
         </div>
-        
+
         {/* メールアドレス */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">メールアドレス <span className="text-error">*</span></span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>
+              メールアドレス <span className='text-error'>*</span>
+            </span>
           </label>
           <input
-            type="email"
-            className="form-input"
+            type='email'
+            className='form-input'
             value={formData.email}
             onChange={(e) => handleInputChange('email', e.target.value)}
             required
           />
         </div>
-        
+
         {/* 生年月日 */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">生年月日 <span className="text-error">*</span></span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>
+              生年月日 <span className='text-error'>*</span>
+            </span>
           </label>
           <input
-            type="date"
-            className="form-input"
+            type='date'
+            className='form-input'
             value={formData.birthDate}
             onChange={(e) => handleInputChange('birthDate', e.target.value)}
             required
           />
         </div>
-        
+
         {/* 性別 */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">性別 <span className="text-error">*</span></span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>
+              性別 <span className='text-error'>*</span>
+            </span>
           </label>
           <select
-            className="form-input"
+            className='form-input'
             value={formData.gender}
             onChange={(e) => handleInputChange('gender', e.target.value)}
             required
           >
-            <option value="">選択してください</option>
-            <option value="male">男性</option>
-            <option value="female">女性</option>
-            <option value="other">その他</option>
+            <option value=''>選択してください</option>
+            <option value='male'>男性</option>
+            <option value='female'>女性</option>
+            <option value='other'>その他</option>
           </select>
         </div>
-        
+
         {/* 電話番号 */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">電話番号</span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>電話番号</span>
           </label>
           <input
-            type="tel"
-            className="form-input"
+            type='tel'
+            className='form-input'
             value={formData.phone}
             onChange={(e) => handleInputChange('phone', e.target.value)}
           />
         </div>
       </div>
-      
+
       {/* 住所 */}
-      <div className="form-control">
-        <label className="form-label">
-          <span className="label-text">住所</span>
+      <div className='form-control'>
+        <label className='form-label'>
+          <span className='label-text'>住所</span>
         </label>
         <input
-          type="text"
-          className="form-input"
+          type='text'
+          className='form-input'
           value={formData.address}
           onChange={(e) => handleInputChange('address', e.target.value)}
         />
       </div>
-      
-      <div className="divider"></div>
-      
-      <h3 className="text-lg font-semibold">職務情報</h3>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <div className='divider'></div>
+
+      <h3 className='text-lg font-semibold'>職務情報</h3>
+
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {/* 現在の状況 */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">現在の状況 <span className="text-error">*</span></span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>
+              現在の状況 <span className='text-error'>*</span>
+            </span>
           </label>
           <select
-            className="form-input"
+            className='form-input'
             value={formData.status}
             onChange={(e) => handleInputChange('status', e.target.value)}
             required
           >
-            <option value="available">営業中</option>
-            <option value="inProject">案件中</option>
-            <option value="onLeave">休職中</option>
-            <option value="retired">退職済み</option>
+            <option value='available'>営業中</option>
+            <option value='inProject'>案件中</option>
+            <option value='onLeave'>休職中</option>
+            <option value='retired'>退職済み</option>
           </select>
         </div>
-        
+
         {/* 所属 */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">所属</span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>所属</span>
           </label>
           <input
-            type="text"
-            className="form-input"
+            type='text'
+            className='form-input'
             value={formData.department}
             onChange={(e) => handleInputChange('department', e.target.value)}
           />
         </div>
-        
+
         {/* 入社日 */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">入社日</span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>入社日</span>
           </label>
           <input
-            type="date"
-            className="form-input"
+            type='date'
+            className='form-input'
             value={formData.joinDate}
             onChange={(e) => handleInputChange('joinDate', e.target.value)}
           />
         </div>
-        
+
         {/* TOEICスコア */}
-        <div className="form-control">
-          <label className="form-label">
-            <span className="label-text">TOEICスコア</span>
+        <div className='form-control'>
+          <label className='form-label'>
+            <span className='label-text'>TOEICスコア</span>
           </label>
           <input
-            type="number"
-            className="form-input"
+            type='number'
+            className='form-input'
             value={formData.toeicScore}
-            onChange={(e) => handleInputChange('toeicScore', parseInt(e.target.value))}
-            min="0"
-            max="990"
+            onChange={(e) =>
+              handleInputChange('toeicScore', parseInt(e.target.value))
+            }
+            min='0'
+            max='990'
           />
         </div>
       </div>
@@ -277,33 +295,34 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
   );
 
   const renderSkillsTab = () => (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h3 className="text-lg font-semibold">スキル情報</h3>
-        <button className="btn btn-primary btn-sm">
-          スキル追加
-        </button>
+    <div className='space-y-6'>
+      <div className='flex justify-between items-center'>
+        <h3 className='text-lg font-semibold'>スキル情報</h3>
+        <button className='btn btn-primary btn-sm'>スキル追加</button>
       </div>
-      
+
       {/* 現在のスキル */}
-      <div className="space-y-4">
+      <div className='space-y-4'>
         {formData.userSkills.map((userSkill, index) => {
-          const skill = mockSkills.find(s => s.id === userSkill.skillId);
+          const skill = mockSkills.find((s) => s.id === userSkill.skillId);
           return (
-            <div key={index} className="card bg-base-100 border border-base-300">
-              <div className="card-body p-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+            <div
+              key={index}
+              className='card bg-base-100 border border-base-300'
+            >
+              <div className='card-body p-4'>
+                <div className='grid grid-cols-1 md:grid-cols-4 gap-4 items-center'>
                   <div>
-                    <p className="font-medium">{skill?.name}</p>
-                    <p className="text-sm text-gray-500">{skill?.category}</p>
+                    <p className='font-medium'>{skill?.name}</p>
+                    <p className='text-sm text-gray-500'>{skill?.category}</p>
                   </div>
-                  
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text text-xs">レベル</span>
+
+                  <div className='form-control'>
+                    <label className='label'>
+                      <span className='label-text text-xs'>レベル</span>
                     </label>
                     <select
-                      className="select select-bordered select-sm"
+                      className='select select-bordered select-sm'
                       value={userSkill.level}
                       onChange={(e) => {
                         const newSkills = [...formData.userSkills];
@@ -318,28 +337,32 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
                       <option value={5}>5 - エキスパート</option>
                     </select>
                   </div>
-                  
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text text-xs">経験年数</span>
+
+                  <div className='form-control'>
+                    <label className='label'>
+                      <span className='label-text text-xs'>経験年数</span>
                     </label>
                     <input
-                      type="number"
-                      className="input input-bordered input-sm"
+                      type='number'
+                      className='input input-bordered input-sm'
                       value={userSkill.experienceYears}
                       onChange={(e) => {
                         const newSkills = [...formData.userSkills];
-                        newSkills[index].experienceYears = parseInt(e.target.value);
+                        newSkills[index].experienceYears = parseInt(
+                          e.target.value
+                        );
                         handleInputChange('userSkills', newSkills);
                       }}
-                      min="0"
+                      min='0'
                     />
                   </div>
-                  
+
                   <button
-                    className="btn btn-error btn-sm"
+                    className='btn btn-error btn-sm'
                     onClick={() => {
-                      const newSkills = formData.userSkills.filter((_, i) => i !== index);
+                      const newSkills = formData.userSkills.filter(
+                        (_, i) => i !== index
+                      );
                       handleInputChange('userSkills', newSkills);
                     }}
                   >
@@ -351,60 +374,72 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
           );
         })}
       </div>
-      
+
       {formData.userSkills.length === 0 && (
-        <div className="text-center py-8">
-          <p className="text-gray-500">スキルが登録されていません</p>
-          <button className="btn btn-primary mt-2">
-            最初のスキルを追加
-          </button>
+        <div className='text-center py-8'>
+          <p className='text-gray-500'>スキルが登録されていません</p>
+          <button className='btn btn-primary mt-2'>最初のスキルを追加</button>
         </div>
       )}
     </div>
   );
 
   const renderQualificationsTab = () => (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h3 className="text-lg font-semibold">保有資格</h3>
-        <button className="btn btn-primary btn-sm">
-          資格追加
-        </button>
+    <div className='space-y-6'>
+      <div className='flex justify-between items-center'>
+        <h3 className='text-lg font-semibold'>保有資格</h3>
+        <button className='btn btn-primary btn-sm'>資格追加</button>
       </div>
-      
+
       {/* 現在の資格 */}
-      <div className="space-y-4">
+      <div className='space-y-4'>
         {formData.userQualifications.map((userQualification, index) => {
-          const qualification = mockQualifications.find(q => q.id === userQualification.qualificationId);
+          const qualification = mockQualifications.find(
+            (q) => q.id === userQualification.qualificationId
+          );
           return (
-            <div key={index} className="card bg-base-100 border border-base-300">
-              <div className="card-body p-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <div
+              key={index}
+              className='card bg-base-100 border border-base-300'
+            >
+              <div className='card-body p-4'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4 items-center'>
                   <div>
-                    <p className="font-medium">{qualification?.name}</p>
+                    <p className='font-medium'>{qualification?.name}</p>
                   </div>
-                  
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text text-xs">取得日</span>
+
+                  <div className='form-control'>
+                    <label className='label'>
+                      <span className='label-text text-xs'>取得日</span>
                     </label>
                     <input
-                      type="date"
-                      className="input input-bordered input-sm"
+                      type='date'
+                      className='input input-bordered input-sm'
                       value={userQualification.obtainedDate}
                       onChange={(e) => {
-                        const newQualifications = [...formData.userQualifications];
+                        const newQualifications = [
+                          ...formData.userQualifications,
+                        ];
                         newQualifications[index].obtainedDate = e.target.value;
-                        handleInputChange('userQualifications', newQualifications);
+                        handleInputChange(
+                          'userQualifications',
+                          newQualifications
+                        );
                       }}
                     />
                   </div>
-                  
+
                   <button
-                    className="btn btn-error btn-sm"
+                    className='btn btn-error btn-sm'
                     onClick={() => {
-                      const newQualifications = formData.userQualifications.filter((_, i) => i !== index);
-                      handleInputChange('userQualifications', newQualifications);
+                      const newQualifications =
+                        formData.userQualifications.filter(
+                          (_, i) => i !== index
+                        );
+                      handleInputChange(
+                        'userQualifications',
+                        newQualifications
+                      );
                     }}
                   >
                     削除
@@ -415,41 +450,40 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
           );
         })}
       </div>
-      
+
       {formData.userQualifications.length === 0 && (
-        <div className="text-center py-8">
-          <p className="text-gray-500">資格が登録されていません</p>
-          <button className="btn btn-primary mt-2">
-            最初の資格を追加
-          </button>
+        <div className='text-center py-8'>
+          <p className='text-gray-500'>資格が登録されていません</p>
+          <button className='btn btn-primary mt-2'>最初の資格を追加</button>
         </div>
       )}
     </div>
   );
 
   const renderCareerTab = () => (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h3 className="text-lg font-semibold">業務経歴</h3>
-        <button className="btn btn-primary btn-sm">
-          経歴追加
-        </button>
+    <div className='space-y-6'>
+      <div className='flex justify-between items-center'>
+        <h3 className='text-lg font-semibold'>業務経歴</h3>
+        <button className='btn btn-primary btn-sm'>経歴追加</button>
       </div>
-      
+
       {/* 現在の経歴 */}
-      <div className="space-y-6">
+      <div className='space-y-6'>
         {formData.careerHistories.map((career, index) => (
-          <div key={career.id} className="card bg-base-100 border border-base-300">
-            <div className="card-body">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div
+            key={career.id}
+            className='card bg-base-100 border border-base-300'
+          >
+            <div className='card-body'>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 {/* 会社名 */}
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">会社名</span>
+                <div className='form-control'>
+                  <label className='label'>
+                    <span className='label-text'>会社名</span>
                   </label>
                   <input
-                    type="text"
-                    className="input input-bordered"
+                    type='text'
+                    className='input input-bordered'
                     value={career.companyName}
                     onChange={(e) => {
                       const newCareers = [...formData.careerHistories];
@@ -458,15 +492,15 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
                     }}
                   />
                 </div>
-                
+
                 {/* 役職 */}
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">役職</span>
+                <div className='form-control'>
+                  <label className='label'>
+                    <span className='label-text'>役職</span>
                   </label>
                   <input
-                    type="text"
-                    className="input input-bordered"
+                    type='text'
+                    className='input input-bordered'
                     value={career.position}
                     onChange={(e) => {
                       const newCareers = [...formData.careerHistories];
@@ -475,15 +509,15 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
                     }}
                   />
                 </div>
-                
+
                 {/* 開始日 */}
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">開始日</span>
+                <div className='form-control'>
+                  <label className='label'>
+                    <span className='label-text'>開始日</span>
                   </label>
                   <input
-                    type="date"
-                    className="input input-bordered"
+                    type='date'
+                    className='input input-bordered'
                     value={career.startDate}
                     onChange={(e) => {
                       const newCareers = [...formData.careerHistories];
@@ -492,15 +526,15 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
                     }}
                   />
                 </div>
-                
+
                 {/* 終了日 */}
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">終了日</span>
+                <div className='form-control'>
+                  <label className='label'>
+                    <span className='label-text'>終了日</span>
                   </label>
                   <input
-                    type="date"
-                    className="input input-bordered"
+                    type='date'
+                    className='input input-bordered'
                     value={career.endDate}
                     onChange={(e) => {
                       const newCareers = [...formData.careerHistories];
@@ -510,14 +544,14 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
                   />
                 </div>
               </div>
-              
+
               {/* 業務内容 */}
-              <div className="form-control mt-4">
-                <label className="label">
-                  <span className="label-text">業務内容</span>
+              <div className='form-control mt-4'>
+                <label className='label'>
+                  <span className='label-text'>業務内容</span>
                 </label>
                 <textarea
-                  className="textarea textarea-bordered"
+                  className='textarea textarea-bordered'
                   rows={3}
                   value={career.description}
                   onChange={(e) => {
@@ -527,41 +561,45 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
                   }}
                 />
               </div>
-              
+
               {/* 担当工程 */}
-              <div className="form-control mt-4">
-                <label className="label">
-                  <span className="label-text">担当工程</span>
+              <div className='form-control mt-4'>
+                <label className='label'>
+                  <span className='label-text'>担当工程</span>
                 </label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                  {mockProcesses.map(process => (
-                    <label key={process.id} className="label cursor-pointer">
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-2'>
+                  {mockProcesses.map((process) => (
+                    <label key={process.id} className='label cursor-pointer'>
                       <input
-                        type="checkbox"
-                        className="checkbox checkbox-sm"
+                        type='checkbox'
+                        className='checkbox checkbox-sm'
                         checked={career.processes.includes(process.id)}
                         onChange={(e) => {
                           const newCareers = [...formData.careerHistories];
                           if (e.target.checked) {
                             newCareers[index].processes.push(process.id);
                           } else {
-                            newCareers[index].processes = newCareers[index].processes.filter(p => p !== process.id);
+                            newCareers[index].processes = newCareers[
+                              index
+                            ].processes.filter((p) => p !== process.id);
                           }
                           handleInputChange('careerHistories', newCareers);
                         }}
                       />
-                      <span className="label-text text-sm">{process.name}</span>
+                      <span className='label-text text-sm'>{process.name}</span>
                     </label>
                   ))}
                 </div>
               </div>
-              
+
               {/* 削除ボタン */}
-              <div className="card-actions justify-end mt-4">
+              <div className='card-actions justify-end mt-4'>
                 <button
-                  className="btn btn-error btn-sm"
+                  className='btn btn-error btn-sm'
                   onClick={() => {
-                    const newCareers = formData.careerHistories.filter((_, i) => i !== index);
+                    const newCareers = formData.careerHistories.filter(
+                      (_, i) => i !== index
+                    );
                     handleInputChange('careerHistories', newCareers);
                   }}
                 >
@@ -572,35 +610,31 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
           </div>
         ))}
       </div>
-      
+
       {formData.careerHistories.length === 0 && (
-        <div className="text-center py-8">
-          <p className="text-gray-500">業務経歴が登録されていません</p>
-          <button className="btn btn-primary mt-2">
-            最初の経歴を追加
-          </button>
+        <div className='text-center py-8'>
+          <p className='text-gray-500'>業務経歴が登録されていません</p>
+          <button className='btn btn-primary mt-2'>最初の経歴を追加</button>
         </div>
       )}
     </div>
   );
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className='container mx-auto px-4 py-6'>
       {/* ヘッダー */}
-      <div className="flex justify-between items-center mb-6">
+      <div className='flex justify-between items-center mb-6'>
         <div>
           <Link
             href={`/engineers/${params.id}`}
-            className="btn btn-ghost btn-sm"
+            className='btn btn-ghost btn-sm'
           >
             ← 戻る
           </Link>
-          <h1 className="text-2xl font-bold mt-2">エンジニア情報編集</h1>
+          <h1 className='text-2xl font-bold mt-2'>エンジニア情報編集</h1>
         </div>
-        <div className="space-x-2">
-          <button className="btn btn-outline">
-            キャンセル
-          </button>
+        <div className='space-x-2'>
+          <button className='btn btn-outline'>キャンセル</button>
           <button
             className={`btn btn-primary ${isLoading ? 'loading' : ''}`}
             onClick={handleSave}
@@ -612,7 +646,7 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
       </div>
 
       {/* タブナビゲーション */}
-      <div className="tabs tabs-boxed mb-6">
+      <div className='tabs tabs-boxed mb-6'>
         <button
           className={`tab ${activeTab === 'basic' ? 'tab-active' : ''}`}
           onClick={() => setActiveTab('basic')}
@@ -640,8 +674,8 @@ export default function EngineerEditPage({ params }: { params: { id: string } })
       </div>
 
       {/* タブコンテンツ */}
-      <div className="card bg-base-100 shadow-lg">
-        <div className="card-body">
+      <div className='card bg-base-100 shadow-lg'>
+        <div className='card-body'>
           {activeTab === 'basic' && renderBasicInfoTab()}
           {activeTab === 'skills' && renderSkillsTab()}
           {activeTab === 'qualifications' && renderQualificationsTab()}

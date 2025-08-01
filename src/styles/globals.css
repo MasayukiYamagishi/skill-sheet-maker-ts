@@ -102,4 +102,17 @@
   .text-heading-h3 {
     @apply text-2xl font-bold;
   }
+
+  /* システム設定に応じたtext-neutralの色制御 */
+  @media (prefers-color-scheme: light) {
+    .text-neutral {
+      color: #000000; /* ライトモード時: 黒色 */
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .text-neutral {
+      color: #ffffff; /* ダークモード時: 白色 */
+    }
+  }
 }
