@@ -1,3 +1,5 @@
+'use client';
+
 import { COMMON_STYLES, SIZES, TRANSITIONS } from '@/constants/styles';
 import { BUTTON_LABELS, FIELD_LABELS } from '@/constants/ui';
 import Link from 'next/link';

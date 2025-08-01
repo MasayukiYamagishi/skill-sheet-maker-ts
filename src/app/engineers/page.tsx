@@ -1,3 +1,5 @@
+'use client';
+
 import Layout from '@/components/layout/Layout';
 import UserCard from '@/components/users/UserCard';
 import {
