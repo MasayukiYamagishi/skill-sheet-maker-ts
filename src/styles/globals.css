@@ -9,7 +9,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 100 900; /* 可変フォントのweight範囲 */
-  src: url('./public/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
   font-display: swap;
 }
 
@@ -18,14 +18,14 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url('./public/fonts/Inter_18pt-Regular.ttf') format('truetype');
+  src: url('/fonts/Inter_18pt-Regular.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: url('./pulic/fonts/Inter_18pt-Bold.ttf') format('truetype');
+  src: url('/fonts/Inter_18pt-Bold.ttf') format('truetype');
   font-display: swap;
 }
 
@@ -34,7 +34,7 @@
   font-family: 'Noto Sans JP';
   font-style: normal;
   font-weight: 100 900;
-  src: url('./public/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
   font-display: swap;
 }
 
@@ -43,14 +43,14 @@
   font-family: 'Noto Sans JP';
   font-style: normal;
   font-weight: 400;
-  src: url('./public/fonts/NotoSansJP-Regular.ttf') format('truetype');
+  src: url('/fonts/NotoSansJP-Regular.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Noto Sans JP';
   font-style: normal;
   font-weight: 700;
-  src: url('./public/fonts/NotoSansJP-Bold.ttf') format('truetype');
+  src: url('/fonts/NotoSansJP-Bold.ttf') format('truetype');
   font-display: swap;
 }
 
