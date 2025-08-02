@@ -1,10 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { MdArrowBack } from 'react-icons/md';
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState('users');
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   // フォームデータ
   const [systemSettings, setSystemSettings] = useState({
@@ -570,14 +573,32 @@ export default function SettingsPage() {
     <div className='container mx-auto px-4 py-6 max-w-6xl'>
       {/* ヘッダー */}
       <div className='flex justify-between items-center mb-6'>
-        <h1 className='text-2xl font-bold'>設定</h1>
-        <button
-          className={`btn btn-primary ${isLoading ? 'loading' : ''}`}
-          onClick={handleSave}
-          disabled={isLoading}
-        >
-          {isLoading ? '保存中...' : '設定を保存'}
-        </button>
+        <div className='flex items-center space-x-4'>
+          <button
+            className='btn btn-ghost btn-circle'
+            onClick={() => router.push('/dashboard')}
+            title='ダッシュボードに戻る'
+          >
+            <MdArrowBack className='text-xl' />
+          </button>
+          <h1 className='text-2xl font-bold'>設定</h1>
+        </div>
+        <div className='flex items-center space-x-3'>
+          <button
+            className='btn btn-outline'
+            onClick={() => router.push('/dashboard')}
+          >
+            <MdArrowBack className='text-sm mr-2' />
+            ダッシュボードに戻る
+          </button>
+          <button
+            className={`btn btn-primary ${isLoading ? 'loading' : ''}`}
+            onClick={handleSave}
+            disabled={isLoading}
+          >
+            {isLoading ? '保存中...' : '設定を保存'}
+          </button>
+        </div>
       </div>
 
       <div className='grid grid-cols-1 lg:grid-cols-4 gap-6'>
