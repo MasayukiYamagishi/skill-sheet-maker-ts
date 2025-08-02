@@ -22,7 +22,7 @@ interface SidebarProps {
 const menuItems = [
   {
     name: MENU_LABELS.home,
-    href: '/',
+    href: '/dashboard',
     icon: MdHome,
     roles: ['admin', 'sales', 'engineer'],
   },
