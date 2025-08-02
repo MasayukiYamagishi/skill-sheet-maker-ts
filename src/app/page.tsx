@@ -1,209 +1,122 @@
-import StatCard from '@/components/common/StatCard';
-import Layout from '@/components/layout/Layout';
-import { SIZES } from '@/constants/styles';
-import { STATS_LABELS } from '@/constants/ui';
-import {
-  MdBarChart,
-  MdNotifications,
-  MdPeople,
-  MdPersonAdd,
-} from 'react-icons/md';
+'use client';
 
-// モックデータ
-const mockUser = {
-  name: '管理者',
-  email: 'admin@example.com',
-};
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { MdLock, MdPerson, MdVisibility, MdVisibilityOff } from 'react-icons/md';
 
-const mockStats = [
-  {
-    title: STATS_LABELS.totalEngineers,
-    value: 120,
-    change: 15,
-    trend: 'up' as const,
-    icon: <MdPeople className={SIZES.iconXl} />,
-  },
-  {
-    title: STATS_LABELS.available,
-    value: 28,
-    change: 5,
-    trend: 'up' as const,
-    icon: <MdPersonAdd className={SIZES.iconXl} />,
-  },
-  {
-    title: STATS_LABELS.utilizationRate,
-    value: '85%',
-    change: -2,
-    trend: 'down' as const,
-    icon: <MdBarChart className={SIZES.iconXl} />,
-  },
-];
+export default function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
-const mockActivities = [
-  {
-    id: 1,
-    message: '山田太郎さんがプロフィールを更新しました',
-    time: '2時間前',
-    type: 'update',
-  },
-  {
-    id: 2,
-    message: '新規エンジニア2名が登録されました',
-    time: '5時間前',
-    type: 'new',
-  },
-  {
-    id: 3,
-    message: '鈴木花子さんがスキル情報を追加しました',
-    time: '1日前',
-    type: 'update',
-  },
-  {
-    id: 4,
-    message: '田中次郎さんのステータスが「案件中」に更新されました',
-    time: '2日前',
-    type: 'status',
-  },
-];
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    // ログイン処理をシミュレート（2秒待機）
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // ダッシュボードに遷移
+    router.push('/dashboard');
+  };
 
-export default function HomePage() {
   return (
-    <Layout user={mockUser} userRole='admin'>
-      <div className='space-y-6'>
-        {/* ページヘッダー */}
-        <div className='flex items-center justify-between'>
-          <div>
-            <h1 className='text-3xl font-bold text-neutral'>Dashboard</h1>
-            <p className='text-base-content/70 mt-1'>
-              エンジニア管理システムの概要
-            </p>
+    <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-base-200 to-secondary/10'>
+      <div className='w-full max-w-md'>
+        {/* ロゴ・タイトル */}
+        <div className='text-center mb-8'>
+          <div className='w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4'>
+            <MdPerson className='text-3xl text-white' />
           </div>
-          <div className='flex items-center gap-2'>
-            <div className='badge badge-primary badge-sm'>最新</div>
-          </div>
+          <h1 className='text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent'>
+            Orbit
+          </h1>
+          <p className='text-base-content/70 mt-2'>エンジニア管理システム</p>
         </div>
 
-        {/* 統計カード */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {mockStats.map((stat, index) => (
-            <StatCard
-              key={index}
-              title={stat.title}
-              value={stat.value}
-              change={stat.change}
-              trend={stat.trend}
-              icon={stat.icon}
-            />
-          ))}
-        </div>
-
-        {/* メインコンテンツエリア */}
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
-          {/* エンジニア数推移グラフ */}
-          <div className='card bg-base-100 shadow-lg'>
-            <div className='card-body'>
-              <h2 className='card-title text-neutral mb-4'>エンジニア数推移</h2>
-
-              {/* グラフエリア（プレースホルダー） */}
-              <div className='h-64 bg-base-200 rounded-lg flex items-center justify-center'>
-                <div className='text-center'>
-                  <MdBarChart className='h-16 w-16 text-base-content/30 mx-auto mb-2' />
-                  <p className='text-base-content/50'>グラフエリア</p>
-                  <p className='text-sm text-base-content/40'>（実装予定）</p>
+        {/* ログインフォーム */}
+        <div className='card bg-base-100 shadow-xl'>
+          <div className='card-body'>
+            <h2 className='card-title text-center justify-center mb-6'>ログイン</h2>
+            
+            <form onSubmit={handleLogin} className='space-y-4'>
+              {/* メールアドレス */}
+              <div className='form-control'>
+                <label className='label'>
+                  <span className='label-text'>メールアドレス</span>
+                </label>
+                <div className='relative'>
+                  <input
+                    type='email'
+                    className='input input-bordered w-full pl-10'
+                    placeholder='admin@example.com'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <MdPerson className='absolute left-3 top-1/2 transform -translate-y-1/2 text-base-content/50' />
                 </div>
               </div>
 
-              {/* 期間選択タブ */}
-              <div className='tabs tabs-boxed mt-4'>
-                <a className='tab tab-active'>1ヶ月</a>
-                <a className='tab'>3ヶ月</a>
-                <a className='tab'>6ヶ月</a>
-                <a className='tab'>1年</a>
-              </div>
-            </div>
-          </div>
-
-          {/* 最近の活動 */}
-          <div className='card bg-base-100 shadow-lg'>
-            <div className='card-body'>
-              <div className='flex items-center justify-between mb-4'>
-                <h2 className='card-title text-neutral'>最近の活動</h2>
-                <MdNotifications className='h-5 w-5 text-base-content/50' />
-              </div>
-
-              <div className='space-y-3'>
-                {mockActivities.map((activity) => (
-                  <div
-                    key={activity.id}
-                    className='flex items-start gap-3 p-3 rounded-lg hover:bg-base-200 transition-colors'
+              {/* パスワード */}
+              <div className='form-control'>
+                <label className='label'>
+                  <span className='label-text'>パスワード</span>
+                </label>
+                <div className='relative'>
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    className='input input-bordered w-full pl-10 pr-10'
+                    placeholder='パスワードを入力'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                  <MdLock className='absolute left-3 top-1/2 transform -translate-y-1/2 text-base-content/50' />
+                  <button
+                    type='button'
+                    className='absolute right-3 top-1/2 transform -translate-y-1/2 text-base-content/50 hover:text-base-content'
+                    onClick={() => setShowPassword(!showPassword)}
                   >
-                    <div className='w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0'></div>
-                    <div className='flex-1 min-w-0'>
-                      <p className='text-sm text-neutral leading-relaxed'>
-                        {activity.message}
-                      </p>
-                      <p className='text-xs text-base-content/50 mt-1'>
-                        {activity.time}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                    {showPassword ? <MdVisibilityOff /> : <MdVisibility />}
+                  </button>
+                </div>
               </div>
 
-              <div className='mt-4'>
-                <button className='btn btn-ghost btn-sm w-full'>
-                  すべて表示
+              {/* ログインボタン */}
+              <div className='form-control mt-6'>
+                <button
+                  type='submit'
+                  className={`btn btn-primary ${isLoading ? 'loading' : ''}`}
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'ログイン中...' : 'ログイン'}
                 </button>
               </div>
+            </form>
+
+            {/* 追加リンク */}
+            <div className='divider'>または</div>
+            
+            <div className='space-y-2 text-center'>
+              <a href='/summary' className='btn btn-outline btn-secondary w-full'>
+                公開サマリーを見る
+              </a>
+              <p className='text-xs text-base-content/50 mt-4'>
+                ※ 現在はデモ版です。<br />
+                メールアドレスとパスワードは何でもログインできます。
+              </p>
             </div>
           </div>
         </div>
 
-        {/* 追加情報カード */}
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-          {/* クイックアクション */}
-          <div className='card bg-base-100 shadow-lg'>
-            <div className='card-body'>
-              <h2 className='card-title text-neutral mb-4'>
-                クイックアクション
-              </h2>
-              <div className='grid grid-cols-2 gap-3'>
-                <button className='btn btn-outline btn-primary'>
-                  <MdPersonAdd className='h-4 w-4' />
-                  新規登録
-                </button>
-                <button className='btn btn-outline btn-secondary'>
-                  <MdBarChart className='h-4 w-4' />
-                  レポート
-                </button>
-                <button className='btn btn-outline'>CSV出力</button>
-                <button className='btn btn-outline'>設定</button>
-              </div>
-            </div>
-          </div>
-
-          {/* システム情報 */}
-          <div className='card bg-base-100 shadow-lg'>
-            <div className='card-body'>
-              <h2 className='card-title text-neutral mb-4'>システム情報</h2>
-              <div className='space-y-2'>
-                <div className='flex justify-between text-sm'>
-                  <span className='text-base-content/70'>最終データ更新</span>
-                  <span className='font-medium'>2024/07/31 14:30</span>
-                </div>
-                <div className='flex justify-between text-sm'>
-                  <span className='text-base-content/70'>バックアップ</span>
-                  <span className='font-medium text-success'>正常</span>
-                </div>
-                <div className='flex justify-between text-sm'>
-                  <span className='text-base-content/70'>システム状態</span>
-                  <span className='font-medium text-success'>稼働中</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* フッター */}
+        <div className='text-center mt-8 text-sm text-base-content/50'>
+          <p>© 2024 Orbit Engineering Management System</p>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 }
