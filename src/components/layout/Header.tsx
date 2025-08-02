@@ -8,6 +8,7 @@ import {
   MENU_LABELS,
 } from '@/constants/ui';
 import { MdAccountCircle, MdMenu } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 
 interface HeaderProps {
   user?: {
@@ -18,6 +19,12 @@ interface HeaderProps {
 }
 
 export default function Header({ user, onSidebarToggle }: HeaderProps) {
+  const router = useRouter();
+
+  const handleMenuClick = (path: string) => {
+    router.push(path);
+  };
+
   return (
     <div className='navbar bg-base-100 border-b border-base-300 px-4 lg:px-6'>
       {/* モバイル用サイドバートグル */}
@@ -65,10 +72,14 @@ export default function Header({ user, onSidebarToggle }: HeaderProps) {
                 </span>
               </li>
               <li>
-                <a>{MENU_LABELS.myProfile}</a>
+                <a onClick={() => handleMenuClick('/my-profile')} className='cursor-pointer'>
+                  {MENU_LABELS.myProfile}
+                </a>
               </li>
               <li>
-                <a>{MENU_LABELS.settings}</a>
+                <a onClick={() => handleMenuClick('/settings')} className='cursor-pointer'>
+                  {MENU_LABELS.settings}
+                </a>
               </li>
               <li>
                 <a>{MENU_LABELS.help}</a>

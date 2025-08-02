@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { MdArrowBack } from 'react-icons/md';
 
 // モックデータ
 const mockUser = {
@@ -58,6 +60,7 @@ const mockStats = {
 };
 
 export default function MyProfilePage() {
+  const router = useRouter();
   const [showMissingItems, setShowMissingItems] = useState(true);
 
   const getActivityIcon = (type: string) => {
@@ -167,14 +170,35 @@ export default function MyProfilePage() {
 
   return (
     <div className='container mx-auto px-4 py-6 max-w-6xl'>
-      {/* ウェルカムメッセージ */}
-      <div className='mb-8'>
-        <h1 className='text-3xl font-bold text-gray-800'>
-          こんにちは、{mockUser.name}さん
-        </h1>
-        <p className='text-gray-600 mt-2'>
-          最終更新: {new Date(mockUser.lastUpdated).toLocaleDateString('ja-JP')}
-        </p>
+      {/* ヘッダー */}
+      <div className='flex justify-between items-center mb-6'>
+        <div className='flex items-center space-x-4'>
+          <button
+            className='btn btn-ghost btn-circle'
+            onClick={() => router.push('/dashboard')}
+            title='ダッシュボードに戻る'
+          >
+            <MdArrowBack className='text-xl' />
+          </button>
+          <div>
+            <h1 className='text-3xl font-bold text-neutral'>
+              こんにちは、{mockUser.name}さん
+            </h1>
+            <p className='text-gray-600 mt-2'>
+              最終更新:{' '}
+              {new Date(mockUser.lastUpdated).toLocaleDateString('ja-JP')}
+            </p>
+          </div>
+        </div>
+        <div className='flex items-center space-x-3'>
+          <button
+            className='btn btn-outline'
+            onClick={() => router.push('/dashboard')}
+          >
+            <MdArrowBack className='text-sm mr-2' />
+            ダッシュボードに戻る
+          </button>
+        </div>
       </div>
 
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
@@ -252,8 +276,8 @@ export default function MyProfilePage() {
                     >
                       <div className='w-2 h-2 bg-warning rounded-full mt-2 flex-shrink-0'></div>
                       <div className='flex-1'>
-                        <p className='font-medium text-gray-800'>{item.item}</p>
-                        <p className='text-sm text-gray-600'>
+                        <p className='font-medium text-neutral'>{item.item}</p>
+                        <p className='text-sm text-gray-400'>
                           {item.description}
                         </p>
                       </div>
@@ -309,7 +333,7 @@ export default function MyProfilePage() {
                   <div key={activity.id} className='flex items-start space-x-3'>
                     {getActivityIcon(activity.type)}
                     <div className='flex-1'>
-                      <p className='text-gray-800'>{activity.description}</p>
+                      <p className='text-neutral'>{activity.description}</p>
                       <p className='text-sm text-gray-500'>
                         {formatDate(activity.date)}
                       </p>
