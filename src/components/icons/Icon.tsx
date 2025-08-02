@@ -1,7 +1,7 @@
 // src/components/Icon.tsx
 import { FC } from 'react';
 import type { IconType } from 'react-icons';
-import { iconMap, IconKey } from './icons';
+import { IconKey, iconMap } from './icons';
 
 export type IconProps = {
   icon: IconKey;

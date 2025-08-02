@@ -1,5 +1,5 @@
-import { FC } from 'react';
 import classNames from 'classnames';
+import { FC } from 'react';
 import { Icon } from '../icons/Icon';
 import type { IconKey } from '../icons/icons';
 
